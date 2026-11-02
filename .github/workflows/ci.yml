@@ -29,7 +29,7 @@ jobs:
 
       - name: Compile FastMM4 (smoke test)
         run: |
-          fpc -Mobjfpc -Sh -Sg -Fi. FastMM4.pas
+          fpc -Mobjfpc -Sh -Sg -Fi src src/FastMM4.pas
 
       - name: Compile smoke test program
         run: |
@@ -57,12 +57,22 @@ jobs:
             end;
           end.
           EOF
-          fpc -Mobjfpc -Sh -Sg -Fi. -o/tmp/smoke_test /tmp/smoke_test.pp
+          fpc -Mobjfpc -Sh -Sg -Fi src -o/tmp/smoke_test /tmp/smoke_test.pp
           /tmp/smoke_test
+
+      - name: Compile security tests (FPC)
+        run: |
+          fpc -Mobjfpc -Sh -Sg -Fi src -o/tmp/int_overflow tests/security/IntegerOverflowTest.dpr
+          /tmp/int_overflow
+
+      - name: Compile and run safe-unlinking test (FPC)
+        run: |
+          fpc -Mobjfpc -Sh -Sg -dMediumSafeUnlinkingTest -Fi src -o/tmp/safe_unlink tests/security/MediumSafeUnlinkingTest.dpr
+          /tmp/safe_unlink
 
       - name: Validate FastMMVersion against boss.json
         run: |
-          CODE_VERSION=$(grep "FastMMVersion = '" FastMM4.pas | sed "s/.*'\(.*\)'.*/\1/")
+          CODE_VERSION=$(grep "FastMMVersion = '" src/FastMM4.pas | sed "s/.*'\(.*\)'.*/\1/")
           BOSS_VERSION=$(grep '"version"' boss.json | sed "s/.*\"version\": \"\(.*\)\".*/\1/")
           echo "Code version: $CODE_VERSION"
           echo "Boss version: $BOSS_VERSION"
@@ -78,7 +88,7 @@ jobs:
 
           # Extract constants from root English messages
           root_constants = {}
-          with open('FastMM4Messages.pas', 'r', encoding='utf-8', errors='ignore') as f:
+          with open('src/FastMM4Messages.pas', 'r', encoding='utf-8', errors='ignore') as f:
               content = f.read()
           for m in re.finditer(r'(\w+)\s*=\s*''(.*?)'';', content):
               root_constants[m.group(1)] = m.group(2)
