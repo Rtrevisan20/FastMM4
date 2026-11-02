@@ -94,7 +94,7 @@ already uses Boss:
 
 ```sh
 boss init -q
-boss install github.com/pleriche/FastMM4
+boss install github.com/Rtrevisan20/FastMM4
 ```
 
 To pin the major/minor version, add the dependency to the consuming project's
@@ -103,7 +103,7 @@ To pin the major/minor version, add the dependency to the consuming project's
 ```json
 {
   "dependencies": {
-    "github.com/pleriche/FastMM4": "^4.994.0"
+    "github.com/Rtrevisan20/FastMM4": "^4.994.0"
   }
 }
 ```
