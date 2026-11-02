@@ -16,7 +16,15 @@ DLL files.
 FastMM4 is the legacy branch. New projects targeting Delphi XE3 or later
 should evaluate [FastMM5](https://github.com/pleriche/FastMM5), the official
 successor with a new API and better scalability. FastMM4 remains maintained
-for compatibility with older compilers and existing projects.
+for compatibility with older compilers (Delphi 4+) and existing projects.
+
+| Quando usar | Recomendação |
+|-------------|--------------|
+| Projetos novos (Delphi XE3+) | Avalie [FastMM5](https://github.com/pleriche/FastMM5) |
+| Projetos existentes com FastMM4 | Continue usando; FastMM4 recebe correções de bugs |
+| Compiladores antigos (Delphi 4-7) | FastMM4 é a escolha adequada |
+| Windows ARM64EC | FastMM4 4.994+ (sem DLL FullDebugMode pré-compilada ainda) |
+| Linux/macOS (Free Pascal) | FastMM4 com FPC (não Delphi Linux64) |
 
 ## Advantages
 
@@ -55,20 +63,28 @@ Notes:
 
 * Precompiled `FastMM_FullDebugMode` libraries are available for Win32,
   Win64 and macOS x86-64 under `FullDebugMode DLL/Precompiled/`. There is no
-  precompiled ARM64EC/ARM64 debug library yet.
+  precompiled ARM64EC/ARM64 debug library yet. The source code supports
+  LLVM-based Delphi compilers (Windows ARM64EC) since 4.994, but the debug
+  DLL must be built from source for ARM64EC targets.
+* Delphi Linux64 (`dcclinux64`) is NOT supported: the POSIX code path exists
+  for Free Pascal (Linux/macOS), not for Delphi's Linux64 compiler. The test
+  with `dcclinux64` fails because the unit `Libc` is not found. Use Free
+  Pascal for Linux targets.
 * For command-line builds with modern Delphi, make sure the Winapi unit scope
   is available (for example, pass `-NSWinapi` to `dcc32`/`dcc64`). IDE
   projects normally configure this automatically.
+* The `src/` directory contains the 6 runtime units. Add it to your compiler
+  search path or copy its contents to your project.
 
 ## Installation
 
 ### Manual
 
-1. Copy the runtime files to your project or add their directory to the
-   compiler search path:
-   * `FastMM4.pas`
-   * `FastMM4Messages.pas`
-   * `FastMM4Options.inc`
+1. Add the `src/` directory to your compiler search path, or copy the
+   runtime files to your project:
+   * `src/FastMM4.pas`
+   * `src/FastMM4Messages.pas`
+   * `src/FastMM4Options.inc`
 2. In the project's `.dpr` file, make `FastMM4` the **first** unit in the
    `uses` clause:
 
@@ -112,10 +128,10 @@ To pin the major/minor version, add the dependency to the consuming project's
 > "No dependencies to install". Use the plain package name or edit
 > `boss.json` directly, as shown above.
 
-The manifest lists the runtime files explicitly in `mainsrc` because they live
-in the repository root. Boss treats each entry as a source path, so this adds
-only the root directory to the consumer's unit search path instead of also
-exposing `Demos/`, `Translations/` and the legacy replacement DLL projects.
+The manifest declares `mainsrc: "src"`, so Boss adds only the `src/`
+directory (containing the 6 runtime units) to the consumer's unit search
+path, without exposing `Demos/`, `Translations/` or the legacy replacement
+DLL projects.
 A future major release will move the runtime units to `src/`, which is the
 documented layout for Boss packages.
 

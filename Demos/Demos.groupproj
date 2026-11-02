@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{8a1f2e3d-4c5b-6a7d-8e9f-0a1b2c3d4e5f}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="Dynamically Loaded DLL\DynamicallyLoadedDLLDemo.groupproj" />
+    <Projects Include="Usage Tracker\UsageTrackerDemo.dproj" />
+    <Projects Include="Replacement borlndmm DLL\FullDebugModeDemo.dpr" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+    <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject>
+    </BorlandProject>
+  </ProjectExtensions>
+  <Target Name="BuildAll">
+    <MSBuild Projects="Dynamically Loaded DLL\DynamicallyLoadedDLLDemo.groupproj" Targets="Build" />
+    <MSBuild Projects="Usage Tracker\UsageTrackerDemo.dproj" Targets="Build" />
+  </Target>
+  <Target Name="CleanAll">
+    <MSBuild Projects="Dynamically Loaded DLL\DynamicallyLoadedDLLDemo.groupproj" Targets="Clean" />
+    <MSBuild Projects="Usage Tracker\UsageTrackerDemo.dproj" Targets="Clean" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

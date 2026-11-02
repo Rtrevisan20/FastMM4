@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          # Strip leading 'v'
+          VERSION=${TAG#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Validate FastMMVersion matches tag
+        run: |
+          CODE_VERSION=$(grep "FastMMVersion = '" src/FastMM4.pas | sed "s/.*'\(.*\)'.*/\1/")
+          TAG_VERSION=${{ steps.version.outputs.version }}
+          echo "Code version: $CODE_VERSION"
+          echo "Tag version: $TAG_VERSION"
+          if [ "$CODE_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::FastMMVersion ($CODE_VERSION) does not match tag ($TAG_VERSION)"
+            exit 1
+          fi
+
+      - name: Validate boss.json version matches tag
+        run: |
+          BOSS_VERSION=$(python3 -c "import json; print(json.load(open('boss.json'))['version'])")
+          TAG_VERSION=${{ steps.version.outputs.version }}
+          echo "boss.json version: $BOSS_VERSION"
+          echo "Tag version: $TAG_VERSION"
+          if [ "$BOSS_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::boss.json version ($BOSS_VERSION) does not match tag ($TAG_VERSION)"
+            exit 1
+          fi
+
+      - name: Generate checksums
+        run: |
+          echo "## Checksums SHA-256" > CHECKSUMS.md
+          echo "" >> CHECKSUMS.md
+          echo "Generated automatically for release ${{ steps.version.outputs.tag }}" >> CHECKSUMS.md
+          echo "" >> CHECKSUMS.md
+          # Note: Binaries are not built in this workflow; add build steps when
+          # ARM64EC/Win32/Win64 DLLs are available.
+          echo "Binaries: see FullDebugMode DLL/Precompiled/ (manually published)" >> CHECKSUMS.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: FastMM4 ${{ steps.version.outputs.version }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false
+
+      - name: Upload checksums
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          files: CHECKSUMS.md

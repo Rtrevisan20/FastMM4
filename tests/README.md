@@ -10,9 +10,10 @@ Free Pascal.
 
 | Arquivo | Descrição |
 |---------|-----------|
-| `tests/FastMM4RegressionTest.dpr` | Programa de teste de regressão |
+| `tests/FastMM4RegressionTest.dpr` | Teste de regressão funcional |
+| `tests/FastMM4StressTest.dpr` | Teste de stress multi-thread |
 
-## Testes cobertos
+## Testes cobertos (Regressão)
 
 | Teste | Descrição |
 |-------|-----------|
@@ -25,16 +26,26 @@ Free Pascal.
 | Alinhamento | Blocos alinhados a 8 bytes (e 16 bytes se `Align16Bytes`) |
 | Multi-threading | 4 threads, 1000 alocações cada, concorrência |
 
+## Testes cobertos (Stress)
+
+| Teste | Descrição |
+|-------|-----------|
+| Stress multi-thread | 8 threads, 500 iterações cada, 50 blocos por iteração, realocações concorrentes, strings |
+
 ## Como executar (Delphi 12)
 
 ```sh
-# Win32
+# Win32 - Regressão
 dcc32 -NSWinapi tests\FastMM4RegressionTest.dpr
 tests\Win32\Debug\FastMM4RegressionTest.exe
 
-# Win64
+# Win64 - Regressão
 dcc64 -NSWinapi tests\FastMM4RegressionTest.dpr
 tests\Win64\Debug\FastMM4RegressionTest.exe
+
+# Win32 - Stress
+dcc32 -NSWinapi tests\FastMM4StressTest.dpr
+tests\Win32\Debug\FastMM4StressTest.exe
 ```
 
 ## Como executar com FullDebugMode
@@ -48,7 +59,7 @@ tests\Win32\Debug\FastMM4RegressionTest.exe
 ## Como executar com Free Pascal (Linux/Windows)
 
 ```sh
-fpc -Mobjfpc -Sh -Sg -Fi. tests\FastMM4RegressionTest.dpr
+fpc -Mobjfpc -Sh -Sg -Fi../src tests\FastMM4RegressionTest.dpr
 ./FastMM4RegressionTest
 ```
 
@@ -63,4 +74,5 @@ Linux (i386 e x86-64) a cada push/pull request.
 - [ ] Todos os testes passam em Win64 (Delphi 12)
 - [ ] `GetMem(-1)` levanta exceção em `FullDebugMode`
 - [ ] `FastMMVersion = '4.994'`
+- [ ] Teste de stress com 8 threads não apresenta falhas
 - [ ] Nenhum vazamento de memória na finalização (verificado com FullDebugMode)

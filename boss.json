@@ -3,7 +3,7 @@
   "description": "Fast replacement memory manager for Delphi and C++ Builder applications",
   "version": "4.994.0",
   "homepage": "https://github.com/Rtrevisan20/FastMM4",
-  "mainsrc": "FastMM4.pas;FastMM4Messages.pas;FastMM4Options.inc;FastMM4DataCollector.pas;FastMM4LockFreeStack.pas;FastMM_OSXUtil.pas",
+  "mainsrc": "src",
   "projects": [],
   "dependencies": {}
 }
