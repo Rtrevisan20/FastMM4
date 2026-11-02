@@ -56,3 +56,9 @@ __history/
 
 # Castalia statistics file
 *.stat
+
+
+# Boss dependency directory
+/modules/
+
+**/AGENTS.md
