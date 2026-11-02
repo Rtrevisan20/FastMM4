@@ -2,7 +2,7 @@
 
 Fast Memory Manager: Messages
 
-Portuguese translation by Carlos Mação (Carlos.Macao@gmail.com).
+Portuguese translation by Carlos Maï¿½ï¿½o (Carlos.Macao@gmail.com).
 
 }
 
@@ -23,72 +23,72 @@ const
   {Class name messages}
   UnknownClassNameMsg = 'Desconhecida';
   {Memory dump message}
-  MemoryDumpMsg = #13#10#13#10'O Dump de memória actual de 256 bytes tem inicio no endereço ';
+  MemoryDumpMsg = #13#10#13#10'O Dump de memï¿½ria actual de 256 bytes tem inicio no endereï¿½o ';
   {Block Error Messages}
-  BlockScanLogHeader = 'Bloco atribuído registado por LogAllocatedBlocksToFile. O Tamanho é: ';
+  BlockScanLogHeader = 'Bloco atribuï¿½do registado por LogAllocatedBlocksToFile. O Tamanho ï¿½: ';
   ErrorMsgHeader = 'FastMM detectou um erro durante ';
   GetMemMsg = 'GetMem';
   FreeMemMsg = 'FreeMem';
   ReallocMemMsg = 'ReallocMem';
   BlockCheckMsg = 'procura de bloco livre';
-  OperationMsg = ' operação. ';
-  BlockHeaderCorruptedMsg = 'O cabeçalho do bloco foi corrompido. ';
-  BlockFooterCorruptedMsg = 'O rodapé do bloco foi corrompido. ';
-  FreeModifiedErrorMsg = 'FastMM detectou que um bloco de memória foi modificado após ter sido libertado. ';
+  OperationMsg = ' operaï¿½ï¿½o. ';
+  BlockHeaderCorruptedMsg = 'O cabeï¿½alho do bloco foi corrompido. ';
+  BlockFooterCorruptedMsg = 'O rodapï¿½ do bloco foi corrompido. ';
+  FreeModifiedErrorMsg = 'FastMM detectou que um bloco de memï¿½ria foi modificado apï¿½s ter sido libertado. ';
   FreeModifiedDetailMsg = #13#10#13#10'Modified byte offsets (and lengths): ';
-  DoubleFreeErrorMsg = 'Foi feita uma tentativa para libertar/atribuir um bloco não atribuido.';
+  DoubleFreeErrorMsg = 'Foi feita uma tentativa para libertar/atribuir um bloco nï¿½o atribuido.';
   WrongMMFreeErrorMsg = 'An attempt has been made to free/reallocate a block that was allocated through a different FastMM instance. Check your memory manager sharing settings.';
   PreviousBlockSizeMsg = #13#10#13#10'O tamanho anterior do bloco era: ';
-  CurrentBlockSizeMsg = #13#10#13#10'O tamanho do bloco é: ';
+  CurrentBlockSizeMsg = #13#10#13#10'O tamanho do bloco ï¿½: ';
   PreviousObjectClassMsg = #13#10#13#10'O bloco foi usado anteriormente por um objecto da classe: ';
-  CurrentObjectClassMsg = #13#10#13#10'O bloco está sendo usado por um objecto da classe: ';
-  PreviousAllocationGroupMsg = #13#10#13#10'O grupo de atribuição era: ';
-  PreviousAllocationNumberMsg = #13#10#13#10'O número de atribuição era: ';
-  CurrentAllocationGroupMsg = #13#10#13#10'O grupo de atribuição é: ';
-  CurrentAllocationNumberMsg = #13#10#13#10'O número de atribuição era: ';
-  BlockErrorMsgTitle = 'Erro de memória detectado';
-  VirtualMethodErrorHeader = 'FastMM detectou uma tentativa de chamada a um método virtual de um objecto libertado. Uma violação de acesso será iniciada para abortar a operação corrente.';
-  InterfaceErrorHeader = 'FastMM detectou uma tentativa de uso de uma interface de um objecto libertado. Uma violação de acesso será iniciada para abortar a operação corrente.';
-  BlockHeaderCorruptedNoHistoryMsg = ' Infelizmente o cabeçalho do bloco foi corrompido e o histórico não está disponível.';
+  CurrentObjectClassMsg = #13#10#13#10'O bloco estï¿½ sendo usado por um objecto da classe: ';
+  PreviousAllocationGroupMsg = #13#10#13#10'O grupo de atribuiï¿½ï¿½o era: ';
+  PreviousAllocationNumberMsg = #13#10#13#10'O nï¿½mero de atribuiï¿½ï¿½o era: ';
+  CurrentAllocationGroupMsg = #13#10#13#10'O grupo de atribuiï¿½ï¿½o ï¿½: ';
+  CurrentAllocationNumberMsg = #13#10#13#10'O nï¿½mero de atribuiï¿½ï¿½o era: ';
+  BlockErrorMsgTitle = 'Erro de memï¿½ria detectado';
+  VirtualMethodErrorHeader = 'FastMM detectou uma tentativa de chamada a um mï¿½todo virtual de um objecto libertado. Uma violaï¿½ï¿½o de acesso serï¿½ iniciada para abortar a operaï¿½ï¿½o corrente.';
+  InterfaceErrorHeader = 'FastMM detectou uma tentativa de uso de uma interface de um objecto libertado. Uma violaï¿½ï¿½o de acesso serï¿½ iniciada para abortar a operaï¿½ï¿½o corrente.';
+  BlockHeaderCorruptedNoHistoryMsg = ' Infelizmente o cabeï¿½alho do bloco foi corrompido e o histï¿½rico nï¿½o estï¿½ disponï¿½vel.';
   FreedObjectClassMsg = #13#10#13#10'Classe do objecto libertado: ';
-  VirtualMethodName = #13#10#13#10'Método virtual: ';
+  VirtualMethodName = #13#10#13#10'Mï¿½todo virtual: ';
   VirtualMethodOffset = 'Deslocamento +';
-  VirtualMethodAddress = #13#10#13#10'Endereço do método virtual: ';
+  VirtualMethodAddress = #13#10#13#10'Endereï¿½o do mï¿½todo virtual: ';
   {Stack trace messages}
-  CurrentThreadIDMsg = #13#10#13#10'O ID da thread actual é 0x';
-  CurrentStackTraceMsg = ', e a análise da pilha interna (endereços de retorno) que conduziram a este erro é:';
-  ThreadIDPrevAllocMsg = #13#10#13#10'Este bloco foi préviamente criado pela thread 0x';
+  CurrentThreadIDMsg = #13#10#13#10'O ID da thread actual ï¿½ 0x';
+  CurrentStackTraceMsg = ', e a anï¿½lise da pilha interna (endereï¿½os de retorno) que conduziram a este erro ï¿½:';
+  ThreadIDPrevAllocMsg = #13#10#13#10'Este bloco foi prï¿½viamente criado pela thread 0x';
   ThreadIDAtAllocMsg = #13#10#13#10'Este bloco foi criado pela thread 0x';
-  ThreadIDAtFreeMsg = #13#10#13#10'Este bloco foi préviamente libertado pela thread 0x';
+  ThreadIDAtFreeMsg = #13#10#13#10'Este bloco foi prï¿½viamente libertado pela thread 0x';
   ThreadIDAtObjectAllocMsg = #13#10#13#10'O objecto foi criado pela thread 0x';
   ThreadIDAtObjectFreeMsg = #13#10#13#10'O objecto foi posteriormente libertado pela thread 0x';
-  StackTraceMsg = ', e a análise da pilha interna (endereços de retorno) nesse momento era:';
+  StackTraceMsg = ', e a anï¿½lise da pilha interna (endereï¿½os de retorno) nesse momento era:';
   {Installation Messages}
-  AlreadyInstalledMsg = 'FastMM4 já se encontra instalado.';
-  AlreadyInstalledTitle = 'Já se encontra instalado.';
-  OtherMMInstalledMsg = 'FastMM4 não pôde ser instalado já que outro gestor '
-    + 'de memória externo já foi instalado.'#13#10'Se você quer usar o FastMM4, '
-    + 'garanta que a unit FastMM4.pas é a primeira na secção "uses"'
+  AlreadyInstalledMsg = 'FastMM4 jï¿½ se encontra instalado.';
+  AlreadyInstalledTitle = 'Jï¿½ se encontra instalado.';
+  OtherMMInstalledMsg = 'FastMM4 nï¿½o pï¿½de ser instalado jï¿½ que outro gestor '
+    + 'de memï¿½ria externo jï¿½ foi instalado.'#13#10'Se vocï¿½ quer usar o FastMM4, '
+    + 'garanta que a unit FastMM4.pas ï¿½ a primeira na secï¿½ï¿½o "uses"'
     + #13#10'do ficheiro .dpr do seu projecto.';
-  OtherMMInstalledTitle = 'Impossível instalar FastMM4 - Outro gestor de memória já se encontra instalado';
-  MemoryAllocatedMsg = 'O FastMM4 não pode ser instalado já que a memória já foi '
-    + 'atribuida através do gestor de memória padrão.'#13#10'FastMM4.pas DEVE '
-    + 'ser a primeira unit no arquivo .dpr do seu projecto, caso contrário a memória pode '
-    + 'ser atribuida'#13#10'através do gestor de memória padrão antes que o FastMM '
-    + 'obtenha o controle. '#13#10#13#10'Se você estiver usando um interceptador de excepções '
-    + 'como MadExcept (ou qualquer outra ferramenta que modifica a ordem de inicialização da '
-    + 'unit),'#13#10'vá para sua página de configuração e assegure-se que a unit '
-    + 'FastMM4.pas ''é inicializada antes de qualquer outra unit.';
-  MemoryAllocatedTitle = 'Impossível instalar FastMM4 - A memória já foi atribuida';
+  OtherMMInstalledTitle = 'Impossï¿½vel instalar FastMM4 - Outro gestor de memï¿½ria jï¿½ se encontra instalado';
+  MemoryAllocatedMsg = 'O FastMM4 nï¿½o pode ser instalado jï¿½ que a memï¿½ria jï¿½ foi '
+    + 'atribuida atravï¿½s do gestor de memï¿½ria padrï¿½o.'#13#10'FastMM4.pas DEVE '
+    + 'ser a primeira unit no arquivo .dpr do seu projecto, caso contrï¿½rio a memï¿½ria pode '
+    + 'ser atribuida'#13#10'atravï¿½s do gestor de memï¿½ria padrï¿½o antes que o FastMM '
+    + 'obtenha o controle. '#13#10#13#10'Se vocï¿½ estiver usando um interceptador de excepï¿½ï¿½es '
+    + 'como MadExcept (ou qualquer outra ferramenta que modifica a ordem de inicializaï¿½ï¿½o da '
+    + 'unit),'#13#10'vï¿½ para sua pï¿½gina de configuraï¿½ï¿½o e assegure-se que a unit '
+    + 'FastMM4.pas ''ï¿½ inicializada antes de qualquer outra unit.';
+  MemoryAllocatedTitle = 'Impossï¿½vel instalar FastMM4 - A memï¿½ria jï¿½ foi atribuida';
   {Leak checking messages}
-  LeakLogHeader = 'Um bloco de memória não foi libertado. O tamanho é: ';
-  LeakMessageHeader = 'Esta aplicação teve fugas de memória. ';
-  SmallLeakDetail = 'As fugas dos blocos pequenos são'
+  LeakLogHeader = 'Um bloco de memï¿½ria nï¿½o foi libertado. O tamanho ï¿½: ';
+  LeakMessageHeader = 'Esta aplicaï¿½ï¿½o teve fugas de memï¿½ria. ';
+  SmallLeakDetail = 'As fugas dos blocos pequenos sï¿½o'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
     + ' (excluindo as fugas esperadas, registadas por ponteiro)'
 {$endif}
     + ':'#13#10;
-  LargeLeakDetail = 'O tamanho das fugas dos blocos médios e grandes é'
+  LargeLeakDetail = 'O tamanho das fugas dos blocos mï¿½dios e grandes ï¿½'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
     + ' (excluindo as fugas esperadas registadas por ponteiro)'
 {$endif}
@@ -100,33 +100,85 @@ const
 {$ifndef HideMemoryLeakHintMessage}
     + #13#10'Nota: '
   {$ifdef RequireIDEPresenceForLeakReporting}
-    + 'Os testes de fugas de memória só serão efectuados se o Delphi estiver activo no mesmo computador. '
+    + 'Os testes de fugas de memï¿½ria sï¿½ serï¿½o efectuados se o Delphi estiver activo no mesmo computador. '
   {$endif}
   {$ifdef FullDebugMode}
     {$ifdef LogMemoryLeakDetailToFile}
-    + 'O detalhe da fuga de memória foi registado num ficheiro de texto na mesma pasta desta aplicação. '
+    + 'O detalhe da fuga de memï¿½ria foi registado num ficheiro de texto na mesma pasta desta aplicaï¿½ï¿½o. '
     {$else}
-    + 'Active o DEFINE "LogMemoryLeakDetailToFile" para obter um ficheiro de registos contendo detalhes das fugas de memória. '
+    + 'Active o DEFINE "LogMemoryLeakDetailToFile" para obter um ficheiro de registos contendo detalhes das fugas de memï¿½ria. '
     {$endif}
   {$else}
-    + 'Para obter um ficheiro de registo contendo detalhes das fugas de memória, active os DEFINES "FullDebugMode" e "LogMemoryLeakDetailToFile". '
+    + 'Para obter um ficheiro de registo contendo detalhes das fugas de memï¿½ria, active os DEFINES "FullDebugMode" e "LogMemoryLeakDetailToFile". '
   {$endif}
-    + 'Para activar a detecção de fugas de memória, active o DEFINE "EnableMemoryLeakReporting".'#13#10
+    + 'Para activar a detecï¿½ï¿½o de fugas de memï¿½ria, active o DEFINE "EnableMemoryLeakReporting".'#13#10
 {$endif}
     + #0;
-  LeakMessageTitle = 'Fuga de memória detectada';
+  LeakMessageTitle = 'Fuga de memï¿½ria detectada';
 {$ifdef UseOutputDebugString}
   FastMMInstallMsg = 'FastMM foi instalado.';
-  FastMMInstallSharedMsg = 'Partilhando uma instância já existente do FastMM.';
+  FastMMInstallSharedMsg = 'Partilhando uma instï¿½ncia jï¿½ existente do FastMM.';
   FastMMUninstallMsg = 'FastMM foi removido.';
-  FastMMUninstallSharedMsg = 'Parando a partilha duma instância existente do FastMM.';
+  FastMMUninstallSharedMsg = 'Parando a partilha duma instï¿½ncia existente do FastMM.';
 {$endif}
 {$ifdef DetectMMOperationsAfterUninstall}
-  InvalidOperationTitle = 'Operação com o gestor de Memória após a sua remoção.';
-  InvalidGetMemMsg = 'FastMM detectou uma chamada a GetMem após a remoção do FastMM.';
-  InvalidFreeMemMsg = 'FastMM detectou uma chamada a FreeMem após a remoção do FastMM.';
-  InvalidReallocMemMsg = 'FastMM detectou uma chamada a ReallocMem após a remoção do FastMM.';
-  InvalidAllocMemMsg = 'FastMM detectou uma chamada a ReallocMem após a remoção do FastMM.';
+  InvalidOperationTitle = 'Operaï¿½ï¿½o com o gestor de Memï¿½ria apï¿½s a sua remoï¿½ï¿½o.';
+  InvalidGetMemMsg = 'FastMM detectou uma chamada a GetMem apï¿½s a remoï¿½ï¿½o do FastMM.';
+  InvalidFreeMemMsg = 'FastMM detectou uma chamada a FreeMem apï¿½s a remoï¿½ï¿½o do FastMM.';
+  InvalidReallocMemMsg = 'FastMM detectou uma chamada a ReallocMem apï¿½s a remoï¿½ï¿½o do FastMM.';
+  InvalidAllocMemMsg = 'FastMM detectou uma chamada a ReallocMem apï¿½s a remoï¿½ï¿½o do FastMM.';
+{$endif}
+
+{$ifdef LogLockContention}
+  LockingReportTitle = 'Locking Report';
+{$endif}
+{$ifdef LogLockContention}
+  LockingReportHeader = 'Top locking contention sites';
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageHeader = 'Release stack usage statistics';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg1 = 'Small blocks [';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg2 = ']: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalSmallBlocksMsg = 'Total small blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageMediumBlocksMsg = 'Medium blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageLargeBlocksMsg = 'Large blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalMemoryMsg = 'Total memory: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers1Msg = ' in ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers2Msg = ' buffers [';
+{$endif}
 {$endif}
 
 implementation

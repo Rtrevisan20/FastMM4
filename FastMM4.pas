@@ -1612,7 +1612,11 @@ implementation
 
 uses
 {$ifndef POSIX}
+  {$ifdef XE2AndUp}
+  Winapi.Windows,
+  {$else}
   Windows,
+  {$endif}
   {$ifdef _EventLog}
     {$ifdef Delphi4or5}
   ShlObj,

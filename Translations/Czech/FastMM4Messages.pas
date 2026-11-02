@@ -25,111 +25,163 @@ const
   CRLF = #13#10;
   EventSeparator = '--------------------------------';
   {Class name messages}
-  UnknownClassNameMsg = 'Neznámá tøída';
+  UnknownClassNameMsg = 'Neznï¿½mï¿½ tï¿½ï¿½da';
   {Memory dump message}
-  MemoryDumpMsg = #13#10#13#10'Vıpis prvních 256 bytù pamìti, které zaèínají na adrese ';
+  MemoryDumpMsg = #13#10#13#10'Vï¿½pis prvnï¿½ch 256 bytï¿½ pamï¿½ti, kterï¿½ zaï¿½ï¿½najï¿½ na adrese ';
   {Block Error Messages}
-  BlockScanLogHeader = 'Alokované bloky byly zalogovány pomocí LogAllocatedBlocksToFile. Velikost je: ';
-  ErrorMsgHeader = 'FastMM detekoval chyby bìhem operace ';
+  BlockScanLogHeader = 'Alokovanï¿½ bloky byly zalogovï¿½ny pomocï¿½ LogAllocatedBlocksToFile. Velikost je: ';
+  ErrorMsgHeader = 'FastMM detekoval chyby bï¿½hem operace ';
   GetMemMsg = 'GetMem';
   FreeMemMsg = 'FreeMem';
   ReallocMemMsg = 'ReallocMem';
-  BlockCheckMsg = 'hledání prázdnıch blokù';
+  BlockCheckMsg = 'hledï¿½nï¿½ prï¿½zdnï¿½ch blokï¿½';
   OperationMsg = ' . ';
-  BlockHeaderCorruptedMsg = 'Hlavièka bloku byla poškozena. ';
-  BlockFooterCorruptedMsg = 'Patièka bloku byla poškozena. ';
-  FreeModifiedErrorMsg = 'FastMM detekoval modifikaci bloku po jeho uvolnìní. ';
+  BlockHeaderCorruptedMsg = 'Hlaviï¿½ka bloku byla poï¿½kozena. ';
+  BlockFooterCorruptedMsg = 'Patiï¿½ka bloku byla poï¿½kozena. ';
+  FreeModifiedErrorMsg = 'FastMM detekoval modifikaci bloku po jeho uvolnï¿½nï¿½. ';
   FreeModifiedDetailMsg = #13#10#13#10'Modified byte offsets (and lengths): ';
-  DoubleFreeErrorMsg = 'Probìhl pokus o uvolnìní / realokaci ji uvolnìného bloku.';
+  DoubleFreeErrorMsg = 'Probï¿½hl pokus o uvolnï¿½nï¿½ / realokaci jiï¿½ uvolnï¿½nï¿½ho bloku.';
   WrongMMFreeErrorMsg = 'An attempt has been made to free/reallocate a block that was allocated through a different FastMM instance. Check your memory manager sharing settings.';
-  PreviousBlockSizeMsg = #13#10#13#10'Pøedchozí velikost bloku: ';
+  PreviousBlockSizeMsg = #13#10#13#10'Pï¿½edchozï¿½ velikost bloku: ';
   CurrentBlockSizeMsg = #13#10#13#10'Velikost bloku: ';
-  PreviousObjectClassMsg = #13#10#13#10'Blok byl ji vyuit pro objekt typu: ';
-  CurrentObjectClassMsg = #13#10#13#10'Blok je aktuálnì vyuíván pro objekt typu: ';
-  PreviousAllocationGroupMsg = #13#10#13#10'Alokaèní skupina byla: '; //
-  PreviousAllocationNumberMsg = #13#10#13#10'Alokaèní èíslo bylo: ';
-  CurrentAllocationGroupMsg = #13#10#13#10'Alokaèní skupina je: ';
-  CurrentAllocationNumberMsg = #13#10#13#10'Alokaèní èíslo je: ';
-  BlockErrorMsgTitle = 'Detekována chyba práce s pamìtí';
-  VirtualMethodErrorHeader = 'FastMM detekoval pokus o volání virtuální metody ji uvolnìného objektu. Pro ukonèení této operace bude nyní vyhozena vyjímka (access violation).';
-  InterfaceErrorHeader = 'FastMM detekoval pokus o pøístup k interface ji uvolnìného objektu. Pro ukonèení této operace bude nyní vyhozena vyjímka (access violation).';
-  BlockHeaderCorruptedNoHistoryMsg = ' Historie je nedostupná z dùvodu poškození hlavièky bloku.';
-  FreedObjectClassMsg = #13#10#13#10'Typ uvolòovaného objektu: ';
-  VirtualMethodName = #13#10#13#10'Název virtuální metody: ';
+  PreviousObjectClassMsg = #13#10#13#10'Blok byl jiï¿½ vyuï¿½it pro objekt typu: ';
+  CurrentObjectClassMsg = #13#10#13#10'Blok je aktuï¿½lnï¿½ vyuï¿½ï¿½vï¿½n pro objekt typu: ';
+  PreviousAllocationGroupMsg = #13#10#13#10'Alokaï¿½nï¿½ skupina byla: '; //
+  PreviousAllocationNumberMsg = #13#10#13#10'Alokaï¿½nï¿½ ï¿½ï¿½slo bylo: ';
+  CurrentAllocationGroupMsg = #13#10#13#10'Alokaï¿½nï¿½ skupina je: ';
+  CurrentAllocationNumberMsg = #13#10#13#10'Alokaï¿½nï¿½ ï¿½ï¿½slo je: ';
+  BlockErrorMsgTitle = 'Detekovï¿½na chyba prï¿½ce s pamï¿½tï¿½';
+  VirtualMethodErrorHeader = 'FastMM detekoval pokus o volï¿½nï¿½ virtuï¿½lnï¿½ metody jiï¿½ uvolnï¿½nï¿½ho objektu. Pro ukonï¿½enï¿½ tï¿½to operace bude nynï¿½ vyhozena vyjï¿½mka (access violation).';
+  InterfaceErrorHeader = 'FastMM detekoval pokus o pï¿½ï¿½stup k interface jiï¿½ uvolnï¿½nï¿½ho objektu. Pro ukonï¿½enï¿½ tï¿½to operace bude nynï¿½ vyhozena vyjï¿½mka (access violation).';
+  BlockHeaderCorruptedNoHistoryMsg = ' Historie je nedostupnï¿½ z dï¿½vodu poï¿½kozenï¿½ hlaviï¿½ky bloku.';
+  FreedObjectClassMsg = #13#10#13#10'Typ uvolï¿½ovanï¿½ho objektu: ';
+  VirtualMethodName = #13#10#13#10'Nï¿½zev virtuï¿½lnï¿½ metody: ';
   VirtualMethodOffset = 'Offset +';
-  VirtualMethodAddress = #13#10#13#10'Adresa virtuální metody: ';
+  VirtualMethodAddress = #13#10#13#10'Adresa virtuï¿½lnï¿½ metody: ';
   {Stack trace messages}
-  CurrentThreadIDMsg = #13#10#13#10'ID aktivního vlákna (thread ID) je 0x';
-  CurrentStackTraceMsg = ' a stav na zásobníku volání (návratové adresy) je následující:';
-  ThreadIDPrevAllocMsg = #13#10#13#10'Tento blok byl ji jednou alokován vláknem 0x';
-  ThreadIDAtAllocMsg = #13#10#13#10'Tento blok byl alokován vláknem 0x';
-  ThreadIDAtFreeMsg = #13#10#13#10'Blok ji byl jednou uvolnìn vláknem 0x';
-  ThreadIDAtObjectAllocMsg = #13#10#13#10'Objekt byl alokován vláknem 0x';
-  ThreadIDAtObjectFreeMsg = #13#10#13#10'Objekt byl opakovanì uvolnìn vláknem 0x';
-  StackTraceMsg = ' v okamiku, kdy zásobník volání obsahoval tyto návratové adresy:';
+  CurrentThreadIDMsg = #13#10#13#10'ID aktivnï¿½ho vlï¿½kna (thread ID) je 0x';
+  CurrentStackTraceMsg = ' a stav na zï¿½sobnï¿½ku volï¿½nï¿½ (nï¿½vratovï¿½ adresy) je nï¿½sledujï¿½cï¿½:';
+  ThreadIDPrevAllocMsg = #13#10#13#10'Tento blok byl jiï¿½ jednou alokovï¿½n vlï¿½knem 0x';
+  ThreadIDAtAllocMsg = #13#10#13#10'Tento blok byl alokovï¿½n vlï¿½knem 0x';
+  ThreadIDAtFreeMsg = #13#10#13#10'Blok jiï¿½ byl jednou uvolnï¿½n vlï¿½knem 0x';
+  ThreadIDAtObjectAllocMsg = #13#10#13#10'Objekt byl alokovï¿½n vlï¿½knem 0x';
+  ThreadIDAtObjectFreeMsg = #13#10#13#10'Objekt byl opakovanï¿½ uvolnï¿½n vlï¿½knem 0x';
+  StackTraceMsg = ' v okamï¿½iku, kdy zï¿½sobnï¿½k volï¿½nï¿½ obsahoval tyto nï¿½vratovï¿½ adresy:';
   {Installation Messages}
-  AlreadyInstalledMsg = 'FastMM4 ji byl nainstalován.';
-  AlreadyInstalledTitle = 'Nainstalováno.';
-  OtherMMInstalledMsg = 'FastMM4 nemohl bıt nainstalován, protoe jinı memory '
-    + 'manager (MM tøetí strany) ji byl nainstalován.'#13#10'Pro pouití FastMM4 '
-    + 'zkontrolujte, zda je unita FastMM4.pas první unitou v sekci "uses" tohoto '
+  AlreadyInstalledMsg = 'FastMM4 jiï¿½ byl nainstalovï¿½n.';
+  AlreadyInstalledTitle = 'Nainstalovï¿½no.';
+  OtherMMInstalledMsg = 'FastMM4 nemohl bï¿½t nainstalovï¿½n, protoï¿½e jinï¿½ memory '
+    + 'manager (MM tï¿½etï¿½ strany) jiï¿½ byl nainstalovï¿½n.'#13#10'Pro pouï¿½itï¿½ FastMM4 '
+    + 'zkontrolujte, zda je unita FastMM4.pas prvnï¿½ unitou v sekci "uses" tohoto '
     + 'projektu (.dpr soubor).';
-  OtherMMInstalledTitle = 'Nelze nainstalovat FastMM4 - Jinı memory manager je ji nainstalován';
-  MemoryAllocatedMsg = 'FastMM4 nemohl bıt nainstalován, protoe jinı memory '
-    + 'manager (standardní MM) ji byl nainstalován.'#13#10'Pro pouití FastMM4 '
-    + 'zkontrolujte, zda je unita FastMM4.pas první unitou v sekci "uses" tohoto '
+  OtherMMInstalledTitle = 'Nelze nainstalovat FastMM4 - Jinï¿½ memory manager je jiï¿½ nainstalovï¿½n';
+  MemoryAllocatedMsg = 'FastMM4 nemohl bï¿½t nainstalovï¿½n, protoï¿½e jinï¿½ memory '
+    + 'manager (standardnï¿½ MM) jiï¿½ byl nainstalovï¿½n.'#13#10'Pro pouï¿½itï¿½ FastMM4 '
+    + 'zkontrolujte, zda je unita FastMM4.pas prvnï¿½ unitou v sekci "uses" tohoto '
     + 'projektu (.dpr soubor).'#13#10#13#10
-    + 'Pokud pouíváte nìjakı exception trapper (napø. MadExcept) nebo libovolnı '
-    + 'jinı nástroj, kterı modifikuje poøadí sekcí initialization, nakonfigurujte '
-    + 'jej tak, aby unita FastMM4.pas byla inicializována pøed všemi ostatními unitami.';
-  MemoryAllocatedTitle = 'Nelze nainstalovat FastMM4 - Pamì ji byla alokována';
+    + 'Pokud pouï¿½ï¿½vï¿½te nï¿½jakï¿½ exception trapper (napï¿½. MadExcept) nebo libovolnï¿½ '
+    + 'jinï¿½ nï¿½stroj, kterï¿½ modifikuje poï¿½adï¿½ sekcï¿½ initialization, nakonfigurujte '
+    + 'jej tak, aby unita FastMM4.pas byla inicializovï¿½na pï¿½ed vï¿½emi ostatnï¿½mi unitami.';
+  MemoryAllocatedTitle = 'Nelze nainstalovat FastMM4 - Pamï¿½ jiï¿½ byla alokovï¿½na';
   {Leak checking messages}
-  LeakLogHeader = 'Blok pamìti zùstal neuvolnìn. Velikost(i): ';
-  LeakMessageHeader = 'Aplikace neuvolnila pouívanou pamì. ';
-  SmallLeakDetail = 'Bloky malé velikosti'
+  LeakLogHeader = 'Blok pamï¿½ti zï¿½stal neuvolnï¿½n. Velikost(i): ';
+  LeakMessageHeader = 'Aplikace neuvolnila pouï¿½ï¿½vanou pamï¿½. ';
+  SmallLeakDetail = 'Bloky malï¿½ velikosti'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (vyjma chyb registrovanıch pomocí ukazatelù)'
+    + ' (vyjma chyb registrovanï¿½ch pomocï¿½ ukazatelï¿½)'
 {$endif}
     + ':'#13#10;
-  LargeLeakDetail = 'Bloky støední a velké velikosti'
+  LargeLeakDetail = 'Bloky stï¿½ednï¿½ a velkï¿½ velikosti'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (vyjma chyb registrovanıch pomocí ukazatelù)'
+    + ' (vyjma chyb registrovanï¿½ch pomocï¿½ ukazatelï¿½)'
 {$endif}
     + ': ';
-  BytesMessage = ' bytù: ';
+  BytesMessage = ' bytï¿½: ';
   AnsiStringBlockMessage = 'AnsiString';
   UnicodeStringBlockMessage = 'UnicodeString';
   LeakMessageFooter = #13#10
 {$ifndef HideMemoryLeakHintMessage}
-    + #13#10'Poznámka: '
+    + #13#10'Poznï¿½mka: '
   {$ifdef RequireIDEPresenceForLeakReporting}
-    + 'Kontrola neuvolnìné pamìti je provádìna pouze pokud je prostøedí Delphi aktivní na tomté systému. '
+    + 'Kontrola neuvolnï¿½nï¿½ pamï¿½ti je provï¿½dï¿½na pouze pokud je prostï¿½edï¿½ Delphi aktivnï¿½ na tomtï¿½ systï¿½mu. '
   {$endif}
   {$ifdef FullDebugMode}
     {$ifdef LogMemoryLeakDetailToFile}
-    + 'Detailní informace o neuvolnìné pamìti jsou zapsány do textového souboru v adresáøi aplikace. '
+    + 'Detailnï¿½ informace o neuvolnï¿½nï¿½ pamï¿½ti jsou zapsï¿½ny do textovï¿½ho souboru v adresï¿½ï¿½i aplikace. '
     {$else}
-    + 'Povolením direktivy "LogMemoryLeakDetailToFile" lze do souboru logu zapsat detailní informace o neuvolnìné pamìti. '
+    + 'Povolenï¿½m direktivy "LogMemoryLeakDetailToFile" lze do souboru logu zapsat detailnï¿½ informace o neuvolnï¿½nï¿½ pamï¿½ti. '
     {$endif}
   {$else}
-    + 'Pro získání logu s detailními informacemi o neuvolnìné pamìti je potøeba povolit direktivy "FullDebugMode" a "LogMemoryLeakDetailToFile". '
+    + 'Pro zï¿½skï¿½nï¿½ logu s detailnï¿½mi informacemi o neuvolnï¿½nï¿½ pamï¿½ti je potï¿½eba povolit direktivy "FullDebugMode" a "LogMemoryLeakDetailToFile". '
   {$endif}
-    + 'Vypnutím direktivy "EnableMemoryLeakReporting" lze deaktivovat tuto kontrolu neuvolnìné pamìti.'#13#10
+    + 'Vypnutï¿½m direktivy "EnableMemoryLeakReporting" lze deaktivovat tuto kontrolu neuvolnï¿½nï¿½ pamï¿½ti.'#13#10
 {$endif}
     + #0;
-  LeakMessageTitle = 'Byla detekována neuvolnìná pamì (Memory Leak)';
+  LeakMessageTitle = 'Byla detekovï¿½na neuvolnï¿½nï¿½ pamï¿½ (Memory Leak)';
 {$ifdef UseOutputDebugString}
-  FastMMInstallMsg = 'FastMM byl nataen.';
-  FastMMInstallSharedMsg = 'Sdílení existující instance FastMM.';
-  FastMMUninstallMsg = 'FastMM byl odinstalován.';
-  FastMMUninstallSharedMsg = 'Zastaveno sdílení existující instance FastMM.';
+  FastMMInstallMsg = 'FastMM byl nataï¿½en.';
+  FastMMInstallSharedMsg = 'Sdï¿½lenï¿½ existujï¿½cï¿½ instance FastMM.';
+  FastMMUninstallMsg = 'FastMM byl odinstalovï¿½n.';
+  FastMMUninstallSharedMsg = 'Zastaveno sdï¿½lenï¿½ existujï¿½cï¿½ instance FastMM.';
 {$endif}
 {$ifdef DetectMMOperationsAfterUninstall}
-  InvalidOperationTitle = 'Detekce MM volání po odinstalování FastMM.';
-  InvalidGetMemMsg = 'FastMM detekoval volání GetMem, které probìhlo po odinstalaci FastMM.';
-  InvalidFreeMemMsg = 'FastMM detekoval volání FreeMem, které probìhlo po odinstalaci FastMM.';
-  InvalidReallocMemMsg = 'FastMM detekoval volání ReallocMem, které probìhlo po odinstalaci FastMM.';
-  InvalidAllocMemMsg = 'FastMM detekoval volání ReallocMem, které probìhlo po odinstalaci FastMM.';
+  InvalidOperationTitle = 'Detekce MM volï¿½nï¿½ po odinstalovï¿½nï¿½ FastMM.';
+  InvalidGetMemMsg = 'FastMM detekoval volï¿½nï¿½ GetMem, kterï¿½ probï¿½hlo po odinstalaci FastMM.';
+  InvalidFreeMemMsg = 'FastMM detekoval volï¿½nï¿½ FreeMem, kterï¿½ probï¿½hlo po odinstalaci FastMM.';
+  InvalidReallocMemMsg = 'FastMM detekoval volï¿½nï¿½ ReallocMem, kterï¿½ probï¿½hlo po odinstalaci FastMM.';
+  InvalidAllocMemMsg = 'FastMM detekoval volï¿½nï¿½ ReallocMem, kterï¿½ probï¿½hlo po odinstalaci FastMM.';
+{$endif}
+
+{$ifdef LogLockContention}
+  LockingReportTitle = 'Locking Report';
+{$endif}
+{$ifdef LogLockContention}
+  LockingReportHeader = 'Top locking contention sites';
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageHeader = 'Release stack usage statistics';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg1 = 'Small blocks [';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg2 = ']: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalSmallBlocksMsg = 'Total small blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageMediumBlocksMsg = 'Medium blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageLargeBlocksMsg = 'Large blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalMemoryMsg = 'Total memory: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers1Msg = ' in ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers2Msg = ' buffers [';
+{$endif}
 {$endif}
 
 implementation

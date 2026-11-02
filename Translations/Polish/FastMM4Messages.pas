@@ -2,7 +2,7 @@
 
 Fast Memory Manager: Messages
 
-Polish translation by Artur RedŸko (arturr@opegieka.pl).
+Polish translation by Artur Redï¿½ko (arturr@opegieka.pl).
 
 }
 
@@ -23,36 +23,36 @@ const
   {Class name messages}
   UnknownClassNameMsg = 'Nieznany';
   {Memory dump message}
-  MemoryDumpMsg = #13#10#13#10'Aktualny zrzut pamiêci 256 bajtów zaczynaj¹cy siê od adresu ';
+  MemoryDumpMsg = #13#10#13#10'Aktualny zrzut pamiï¿½ci 256 bajtï¿½w zaczynajï¿½cy siï¿½ od adresu ';
   {Block Error Messages}
   BlockScanLogHeader = 'Zaalokowany blok zapisany przez LogAllocatedBlocksToFile. Rozmiar : ';
-  ErrorMsgHeader = 'FastMM wykry³ b³¹d podczas operacji ';
+  ErrorMsgHeader = 'FastMM wykryï¿½ bï¿½ï¿½d podczas operacji ';
   GetMemMsg = 'GetMem';
   FreeMemMsg = 'FreeMem';
   ReallocMemMsg = 'ReallocMem';
   BlockCheckMsg = 'skanowania wolnego bloku';
   OperationMsg = '. ';
-  BlockHeaderCorruptedMsg = 'Nag³ówek bloku jest uszkodzony. ';
+  BlockHeaderCorruptedMsg = 'Nagï¿½ï¿½wek bloku jest uszkodzony. ';
   BlockFooterCorruptedMsg = 'Stopka bloku jest uszkodzona. ';
-  FreeModifiedErrorMsg = 'FastMM wykry³ ¿e blok zosta³ zmodyfikowany po tym jak zosta³ zwolniony. ';
+  FreeModifiedErrorMsg = 'FastMM wykryï¿½ ï¿½e blok zostaï¿½ zmodyfikowany po tym jak zostaï¿½ zwolniony. ';
   FreeModifiedDetailMsg = #13#10#13#10'Modified byte offsets (and lengths): ';
-  DoubleFreeErrorMsg = 'Wykryto próbê zwolnienia/realokacji niezaalokowanego bloku.';
+  DoubleFreeErrorMsg = 'Wykryto prï¿½bï¿½ zwolnienia/realokacji niezaalokowanego bloku.';
   WrongMMFreeErrorMsg = 'An attempt has been made to free/reallocate a block that was allocated through a different FastMM instance. Check your memory manager sharing settings.';
-  PreviousBlockSizeMsg = #13#10#13#10'Poprzedni rozmiar bloku by³: ';
+  PreviousBlockSizeMsg = #13#10#13#10'Poprzedni rozmiar bloku byï¿½: ';
   CurrentBlockSizeMsg = #13#10#13#10'Rozmiar bloku jest: ';
-  PreviousObjectClassMsg = #13#10#13#10'Blok zosta³ poprzednio u¿yty w obiekcie klasy: ';
-  CurrentObjectClassMsg = #13#10#13#10'Blok jest aktualnie u¿ywany w obiekcie klasy: ';
-  PreviousAllocationGroupMsg = #13#10#13#10'By³a grupa alokacji : ';
-  PreviousAllocationNumberMsg = #13#10#13#10'By³a iloœæ alokacji : ';
+  PreviousObjectClassMsg = #13#10#13#10'Blok zostaï¿½ poprzednio uï¿½yty w obiekcie klasy: ';
+  CurrentObjectClassMsg = #13#10#13#10'Blok jest aktualnie uï¿½ywany w obiekcie klasy: ';
+  PreviousAllocationGroupMsg = #13#10#13#10'Byï¿½a grupa alokacji : ';
+  PreviousAllocationNumberMsg = #13#10#13#10'Byï¿½a iloï¿½ï¿½ alokacji : ';
   CurrentAllocationGroupMsg = #13#10#13#10'Jest grupa alokacji : ';
-  CurrentAllocationNumberMsg = #13#10#13#10'Jest iloœæ alokacji : ';
-  BlockErrorMsgTitle = 'Wykryto b³¹d pamiêci';
-  VirtualMethodErrorHeader = 'FastMM wykry³ próbê u¿ycia wirtualnej metody zwolnionego obiektu. Zostanie wygenerowany teraz wyj¹tek w celu przerwania aktualnej operacji.';
-  InterfaceErrorHeader = 'FastMM wykry³ próbê u¿ycia interfejsu zwolnionego obiektu. Zostanie wygenerowany teraz wyj¹tek w celu przerwania aktualnej operacji.';
-  BlockHeaderCorruptedNoHistoryMsg = ' Niestety nag³ówek bloku zosta³ uszkodzony wiêc historia nie jest dostêpna.';
+  CurrentAllocationNumberMsg = #13#10#13#10'Jest iloï¿½ï¿½ alokacji : ';
+  BlockErrorMsgTitle = 'Wykryto bï¿½ï¿½d pamiï¿½ci';
+  VirtualMethodErrorHeader = 'FastMM wykryï¿½ prï¿½bï¿½ uï¿½ycia wirtualnej metody zwolnionego obiektu. Zostanie wygenerowany teraz wyjï¿½tek w celu przerwania aktualnej operacji.';
+  InterfaceErrorHeader = 'FastMM wykryï¿½ prï¿½bï¿½ uï¿½ycia interfejsu zwolnionego obiektu. Zostanie wygenerowany teraz wyjï¿½tek w celu przerwania aktualnej operacji.';
+  BlockHeaderCorruptedNoHistoryMsg = ' Niestety nagï¿½ï¿½wek bloku zostaï¿½ uszkodzony wiï¿½c historia nie jest dostï¿½pna.';
   FreedObjectClassMsg = #13#10#13#10'Klasa zwolnionego obiektu: ';
   VirtualMethodName = #13#10#13#10'Metoda wirtualna: ';
-  VirtualMethodOffset = 'przesuniêcie +';
+  VirtualMethodOffset = 'przesuniï¿½cie +';
   VirtualMethodAddress = #13#10#13#10'Adres metody wirtualnej: ';
   {Stack trace messages}
   CurrentThreadIDMsg = #13#10#13#10'The current thread ID is 0x';
@@ -64,68 +64,120 @@ const
   ThreadIDAtObjectFreeMsg = #13#10#13#10'The object was subsequently freed by thread 0x';
   StackTraceMsg = ', and the stack trace (return addresses) at the time was:';
   {Installation Messages}
-  AlreadyInstalledMsg = 'FastMM4 jest ju¿ zainstalowany.';
-  AlreadyInstalledTitle = 'Ju¿ zainstalowany.';
-  OtherMMInstalledMsg = 'FastMM4 nie mo¿e byæ zainstalowany poniewa¿ inny mened¿er pamiêci '
-    + 'zosta³ ju¿ zainstalowany.'#13#10'Jeœli chcesz u¿yæ FastMM4, '
-    + 'zapewniaj¹c aby modu³ FastMM4.pas by³ zainicjowany jako pierwszy modu³ w twoim projekcie.';
-  OtherMMInstalledTitle = 'Nie mo¿na zainstalowaæ FastMM4 - inny mened¿er pamiêci jest ju¿ zainstalowany';
-  MemoryAllocatedMsg = 'FastMM4 nie mo¿e byæ zainstalowany poniewa¿ pamiêæ zosta³a '
-    + 'juz zaalokowana przez domyœlny mened¿er pamiêci.'#13#10'FastMM4.pas MUSI '
-    + 'byæ pierwszym modu³em w twoim projekcie, w przeciwnym wypadku pamiêæ mo¿e '
-    + 'byæ zaalokowana'#13#10'przez domyœlny mened¿er pamiêci zanim FastMM4 '
-    + 'przejmie kontrolê.'#13#10#13#10'Jeœli u¿ywasz aplikacji do przechwytywania wyj¹tków '
-    + 'takich jak MadExcept,'#13#10'zmieñ jego konfiguracjê zapewniaj¹c aby modu³ '
-    + 'FastMM4.pas by³ zainicjowany jako pierwszy modu³.';
-  MemoryAllocatedTitle = 'Nie mo¿na zainstalowaæ FastMM4 - pamiêæ zosta³a ju¿ zaalokowana.'
-    + 'FastMM4.pas jest inicjowany jako pierwszy modu³.';
+  AlreadyInstalledMsg = 'FastMM4 jest juï¿½ zainstalowany.';
+  AlreadyInstalledTitle = 'Juï¿½ zainstalowany.';
+  OtherMMInstalledMsg = 'FastMM4 nie moï¿½e byï¿½ zainstalowany poniewaï¿½ inny menedï¿½er pamiï¿½ci '
+    + 'zostaï¿½ juï¿½ zainstalowany.'#13#10'Jeï¿½li chcesz uï¿½yï¿½ FastMM4, '
+    + 'zapewniajï¿½c aby moduï¿½ FastMM4.pas byï¿½ zainicjowany jako pierwszy moduï¿½ w twoim projekcie.';
+  OtherMMInstalledTitle = 'Nie moï¿½na zainstalowaï¿½ FastMM4 - inny menedï¿½er pamiï¿½ci jest juï¿½ zainstalowany';
+  MemoryAllocatedMsg = 'FastMM4 nie moï¿½e byï¿½ zainstalowany poniewaï¿½ pamiï¿½ï¿½ zostaï¿½a '
+    + 'juz zaalokowana przez domyï¿½lny menedï¿½er pamiï¿½ci.'#13#10'FastMM4.pas MUSI '
+    + 'byï¿½ pierwszym moduï¿½em w twoim projekcie, w przeciwnym wypadku pamiï¿½ï¿½ moï¿½e '
+    + 'byï¿½ zaalokowana'#13#10'przez domyï¿½lny menedï¿½er pamiï¿½ci zanim FastMM4 '
+    + 'przejmie kontrolï¿½.'#13#10#13#10'Jeï¿½li uï¿½ywasz aplikacji do przechwytywania wyjï¿½tkï¿½w '
+    + 'takich jak MadExcept,'#13#10'zmieï¿½ jego konfiguracjï¿½ zapewniajï¿½c aby moduï¿½ '
+    + 'FastMM4.pas byï¿½ zainicjowany jako pierwszy moduï¿½.';
+  MemoryAllocatedTitle = 'Nie moï¿½na zainstalowaï¿½ FastMM4 - pamiï¿½ï¿½ zostaï¿½a juï¿½ zaalokowana.'
+    + 'FastMM4.pas jest inicjowany jako pierwszy moduï¿½.';
   {Leak checking messages}
-  LeakLogHeader = 'Wyciek³ blok pamiêci. Rozmiar wynosi: ';
-  LeakMessageHeader = 'Aplikacja wykry³a wycieki pamiêci. ';
-  SmallLeakDetail = 'Ma³e bloki wycieków s¹'
+  LeakLogHeader = 'Wyciekï¿½ blok pamiï¿½ci. Rozmiar wynosi: ';
+  LeakMessageHeader = 'Aplikacja wykryï¿½a wycieki pamiï¿½ci. ';
+  SmallLeakDetail = 'Maï¿½e bloki wyciekï¿½w sï¿½'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (wy³¹czaj¹c oczekiwane wycieki zarejestrowane przez wskaŸnik)'
+    + ' (wyï¿½ï¿½czajï¿½c oczekiwane wycieki zarejestrowane przez wskaï¿½nik)'
 {$endif}
     + ':'#13#10;
-  LargeLeakDetail = 'Rozmiary œrednich i du¿ych wycieków wynosz¹'
+  LargeLeakDetail = 'Rozmiary ï¿½rednich i duï¿½ych wyciekï¿½w wynoszï¿½'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (wy³¹czaj¹c oczekiwane wycieki zarejestrowane przez wskaŸnik)'
+    + ' (wyï¿½ï¿½czajï¿½c oczekiwane wycieki zarejestrowane przez wskaï¿½nik)'
 {$endif}
     + ': ';
-  BytesMessage = ' bajtów: ';
+  BytesMessage = ' bajtï¿½w: ';
   AnsiStringBlockMessage = 'AnsiString';
   UnicodeStringBlockMessage = 'UnicodeString';
   LeakMessageFooter = #13#10
 {$ifndef HideMemoryLeakHintMessage}
     + #13#10'Uwaga: '
   {$ifdef RequireIDEPresenceForLeakReporting}
-    + 'Sprawdzenie wycieków pamiêci wystêpuje tylko gdy Delphi jest uruchomione na tym samych komputerze. '
+    + 'Sprawdzenie wyciekï¿½w pamiï¿½ci wystï¿½puje tylko gdy Delphi jest uruchomione na tym samych komputerze. '
   {$endif}
   {$ifdef FullDebugMode}
     {$ifdef LogMemoryLeakDetailToFile}
-    + 'Szczegó³y wycieków s¹ rejestrowane w pliku tekstowym w tym samym katalogu co aplikacja. '
+    + 'Szczegï¿½y wyciekï¿½w sï¿½ rejestrowane w pliku tekstowym w tym samym katalogu co aplikacja. '
     {$else}
-    + 'W³¹cz "LogMemoryLeakDetailToFile" aby uzyskaæ szczegó³owy plik z wyciekami pamiêci. '
+    + 'Wï¿½ï¿½cz "LogMemoryLeakDetailToFile" aby uzyskaï¿½ szczegï¿½owy plik z wyciekami pamiï¿½ci. '
     {$endif}
   {$else}
-    + 'Aby uzyskaæ plik ze szczegó³ami wycieków pamiêci, w³¹cz definicje warunkowe "FullDebugMode" i "LogMemoryLeakDetailToFile". '
+    + 'Aby uzyskaï¿½ plik ze szczegï¿½ami wyciekï¿½w pamiï¿½ci, wï¿½ï¿½cz definicje warunkowe "FullDebugMode" i "LogMemoryLeakDetailToFile". '
   {$endif}
-    + 'Aby wy³¹czyæ raportowanie wycieków, wy³¹cz "EnableMemoryLeakReporting".'#13#10
+    + 'Aby wyï¿½ï¿½czyï¿½ raportowanie wyciekï¿½w, wyï¿½ï¿½cz "EnableMemoryLeakReporting".'#13#10
 {$endif}
     + #0;
-  LeakMessageTitle = 'Wykryto wyciek pamiêci';
+  LeakMessageTitle = 'Wykryto wyciek pamiï¿½ci';
 {$ifdef UseOutputDebugString}
-  FastMMInstallMsg = 'FastMM zosta³ zainstalowany.';
-  FastMMInstallSharedMsg = 'Rozpoczêcie wspó³dzielenia istniej¹cej instancji FastMM.';
-  FastMMUninstallMsg = 'FastMM zosta³ odinstalowany.';
-  FastMMUninstallSharedMsg = 'Zakoñczenie wspó³dzielenia istniej¹cej instancji FastMM.';
+  FastMMInstallMsg = 'FastMM zostaï¿½ zainstalowany.';
+  FastMMInstallSharedMsg = 'Rozpoczï¿½cie wspï¿½dzielenia istniejï¿½cej instancji FastMM.';
+  FastMMUninstallMsg = 'FastMM zostaï¿½ odinstalowany.';
+  FastMMUninstallSharedMsg = 'Zakoï¿½czenie wspï¿½dzielenia istniejï¿½cej instancji FastMM.';
 {$endif}
 {$ifdef DetectMMOperationsAfterUninstall}
   InvalidOperationTitle = 'Operacja MM po deinstalacji.';
-  InvalidGetMemMsg = 'FastMM wykry³ wywo³anie GetMem po tym jak FastMM zosta³ odinstalowany.';
-  InvalidFreeMemMsg = 'FastMM wykry³ wywo³anie FreeMem po tym jak FastMM zosta³ odinstalowany.';
-  InvalidReallocMemMsg = 'FastMM wykry³ wywo³anie ReallocMem po tym jak FastMM zosta³ odinstalowany.';
-  InvalidAllocMemMsg = 'FastMM wykry³ wywo³anie AllocMem po tym jak FastMM zosta³ odinstalowany.';
+  InvalidGetMemMsg = 'FastMM wykryï¿½ wywoï¿½anie GetMem po tym jak FastMM zostaï¿½ odinstalowany.';
+  InvalidFreeMemMsg = 'FastMM wykryï¿½ wywoï¿½anie FreeMem po tym jak FastMM zostaï¿½ odinstalowany.';
+  InvalidReallocMemMsg = 'FastMM wykryï¿½ wywoï¿½anie ReallocMem po tym jak FastMM zostaï¿½ odinstalowany.';
+  InvalidAllocMemMsg = 'FastMM wykryï¿½ wywoï¿½anie AllocMem po tym jak FastMM zostaï¿½ odinstalowany.';
+{$endif}
+
+{$ifdef LogLockContention}
+  LockingReportTitle = 'Locking Report';
+{$endif}
+{$ifdef LogLockContention}
+  LockingReportHeader = 'Top locking contention sites';
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageHeader = 'Release stack usage statistics';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg1 = 'Small blocks [';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg2 = ']: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalSmallBlocksMsg = 'Total small blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageMediumBlocksMsg = 'Medium blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageLargeBlocksMsg = 'Large blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalMemoryMsg = 'Total memory: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers1Msg = ' in ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers2Msg = ' buffers [';
+{$endif}
 {$endif}
 
 implementation

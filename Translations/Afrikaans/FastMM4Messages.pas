@@ -64,21 +64,21 @@ const
   ThreadIDAtObjectFreeMsg = #13#10#13#10'Die objek is daarna vrygestel deur thread 0x';
   StackTraceMsg = ', en die stapel spoor (terugkeer adresse) was toe:';
   {Installation Messages}
-  AlreadyInstalledMsg = 'FastMM4 is alreeds geïnstalleer.';
-  AlreadyInstalledTitle = 'Alreeds geïnstalleer.';
-  OtherMMInstalledMsg = 'FastMM4 kan nie geïnstalleer word nie, want ''n ander '
-    + 'derde party geheuebestuurder is alreeds geïnstalleer.'#13#10'Indien jy FastMM4 wil gebruik, '
-    + 'verseker asb. dat FastMM4.pas die eerste leêr is in die "uses"'
-    + #13#10'afdeling van jou projek se .dpr leêr.';
-  OtherMMInstalledTitle = 'FastMM4 kan nie geïnstalleer word nie - ''n ander geheue bestuurder is alreeds geïnstalleer';
-  MemoryAllocatedMsg = 'FastMM4 kan nie geïnstalleer word nie aangesien geheue reeds '
+  AlreadyInstalledMsg = 'FastMM4 is alreeds geï¿½nstalleer.';
+  AlreadyInstalledTitle = 'Alreeds geï¿½nstalleer.';
+  OtherMMInstalledMsg = 'FastMM4 kan nie geï¿½nstalleer word nie, want ''n ander '
+    + 'derde party geheuebestuurder is alreeds geï¿½nstalleer.'#13#10'Indien jy FastMM4 wil gebruik, '
+    + 'verseker asb. dat FastMM4.pas die eerste leï¿½r is in die "uses"'
+    + #13#10'afdeling van jou projek se .dpr leï¿½r.';
+  OtherMMInstalledTitle = 'FastMM4 kan nie geï¿½nstalleer word nie - ''n ander geheue bestuurder is alreeds geï¿½nstalleer';
+  MemoryAllocatedMsg = 'FastMM4 kan nie geï¿½nstalleer word nie aangesien geheue reeds '
     + 'geallokeer is deur die verstek geheue bestuurder.'#13#10'FastMM4.pas MOET '
-    + 'die eerste leêr wees in jou projek se .dpr leêr, andersins mag geheie geallokeer word'
+    + 'die eerste leï¿½r wees in jou projek se .dpr leï¿½r, andersins mag geheie geallokeer word'
     + ''#13#10'deur die verstek geheue bestuurder voordat FastMM4 '
     + 'beheer verkry. '#13#10#13#10'As jy ''n foutvanger soos MadExcept gebruik '
     + '(of enigiets wat die peuter met die inisialiseringsvolgorder van eenhede),'
-    + #13#10' gaan in sy opstelling bladsy in en verseker dat FastMM4.pas eerste geïnisialiseer word.';
-  MemoryAllocatedTitle = 'FastMM4 kan nie geïnstalleer word nie - geheue is alreeds geallokeer';
+    + #13#10' gaan in sy opstelling bladsy in en verseker dat FastMM4.pas eerste geï¿½nisialiseer word.';
+  MemoryAllocatedTitle = 'FastMM4 kan nie geï¿½nstalleer word nie - geheue is alreeds geallokeer';
   {Leak checking messages}
   LeakLogHeader = '''n Geheue blok het gelek. Die grootte is: ';
   LeakMessageHeader = 'Hierdie program het geheue gelek. ';
@@ -103,12 +103,12 @@ const
   {$endif}
   {$ifdef FullDebugMode}
     {$ifdef LogMemoryLeakDetailToFile}
-    + 'Lekkasie detail word gelog na ''n teks leêr in dieselfde gids as hierdie program. '
+    + 'Lekkasie detail word gelog na ''n teks leï¿½r in dieselfde gids as hierdie program. '
     {$else}
-    + 'Sit "LogMemoryLeakDetailToFile" aan om ''n gedetailleerde verslag oor al die geheue lekkasies na teksleêr te skryf. '
+    + 'Sit "LogMemoryLeakDetailToFile" aan om ''n gedetailleerde verslag oor al die geheue lekkasies na teksleï¿½r te skryf. '
     {$endif}
   {$else}
-    + 'Sit die "FullDebugMode" en "LogMemoryLeakDetailToFile" opsies aan om ''n gedetailleerde verslag oor al die geheue lekkasies na teksleêr te skryf. '
+    + 'Sit die "FullDebugMode" en "LogMemoryLeakDetailToFile" opsies aan om ''n gedetailleerde verslag oor al die geheue lekkasies na teksleï¿½r te skryf. '
   {$endif}
     + 'Om die lekkasie toets te deaktiveer, sit die "EnableMemoryLeakReporting" opsie af.'#13#10
 {$endif}
@@ -126,6 +126,58 @@ const
   InvalidFreeMemMsg = 'FastMM has detected a FreeMem call after FastMM was uninstalled.';
   InvalidReallocMemMsg = 'FastMM has detected a ReallocMem call after FastMM was uninstalled.';
   InvalidAllocMemMsg = 'FastMM has detected an AllocMem call after FastMM was uninstalled.';
+{$endif}
+
+{$ifdef LogLockContention}
+  LockingReportTitle = 'Locking Report';
+{$endif}
+{$ifdef LogLockContention}
+  LockingReportHeader = 'Top locking contention sites';
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageHeader = 'Release stack usage statistics';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg1 = 'Small blocks [';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg2 = ']: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalSmallBlocksMsg = 'Total small blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageMediumBlocksMsg = 'Medium blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageLargeBlocksMsg = 'Large blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalMemoryMsg = 'Total memory: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers1Msg = ' in ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers2Msg = ' buffers [';
+{$endif}
 {$endif}
 
 implementation

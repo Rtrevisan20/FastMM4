@@ -23,106 +23,158 @@ const
   {Class name messages}
   UnknownClassNameMsg = 'н╢ж╙';
   {Memory dump message}
-  MemoryDumpMsg = #13#10#13#10'сиж╦уКкЫж╦╣ьж╥©╙й╪, 256 ╦Жвж╫з╣ддз╢Ф╣╠г╟╣ддзхщ ';
+  MemoryDumpMsg = #13#10#13#10'О©╫О©╫ж╦О©╫О©╫О©╫О©╫ж╦О©╫О©╫ж╥О©╫О©╫й╪, 256 О©╫О©╫О©╫ж╫з╣О©╫О©╫з╢Ф╣╠г╟О©╫О©╫О©╫О©╫О©╫О©╫ ';
   {Block Error Messages}
-  BlockScanLogHeader = '╠╩ LogAllocatedBlocksToFile ╪гб╪╣дря╥жеДдз╢Ф©И. ╢Сп║йг: ';
-  ErrorMsgHeader = 'FastMM ря╪Л╡Б╣╫р╩╦Ж╢МнС, ╣╠й╠уЩтз╫Ьпп ';
+  BlockScanLogHeader = 'О©╫О©╫ LogAllocatedBlocksToFile О©╫О©╫б╪О©╫О©╫О©╫я╥О©╫О©╫О©╫О©╫з╢О©╫О©╫. О©╫О©╫п║О©╫О©╫: ';
+  ErrorMsgHeader = 'FastMM О©╫я╪О©╫Б╣╫р╩О©╫О©╫О©╫О©╫О©╫О©╫, О©╫О©╫й╠О©╫О©╫О©╫з╫О©╫О©╫О©╫ ';
   GetMemMsg = 'GetMem';
   FreeMemMsg = 'FreeMem';
   ReallocMemMsg = 'ReallocMem';
-  BlockCheckMsg = 'и╗цХвтсидз╢Ф©И';
-  OperationMsg = ' ╡ывВ. ';
-  BlockHeaderCorruptedMsg = 'дз╢Ф©Им╥╡©дзхщря╠╩фф╩╣. ';
-  BlockFooterCorruptedMsg = 'дз╢Ф©Ин╡╡©дзхщря╠╩фф╩╣. ';
-  FreeModifiedErrorMsg = 'FastMM ╪Л╡Б╣╫╤тряйм╥едз╢Ф©Идзхщ╣дпч╦д. ';
-  FreeModifiedDetailMsg = #13#10#13#10'╠╩пч╦двж╫з╣дф╚рф╣ьж╥(рт╪╟Ё╓╤х): ';
-  DoubleFreeErrorMsg = 'йтм╪йм╥е/жьпб╥жеДр╩╦Жипн╢╥жеД╣ддз╢Ф©И.';
+  BlockCheckMsg = 'и╗О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫';
+  OperationMsg = ' О©╫О©╫О©╫О©╫. ';
+  BlockHeaderCorruptedMsg = 'О©╫з╢О©╫О©╫м╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╠О©╫О©╫ф╩О©╫. ';
+  BlockFooterCorruptedMsg = 'О©╫з╢О©╫О©╫н╡О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╠О©╫О©╫ф╩О©╫. ';
+  FreeModifiedErrorMsg = 'FastMM О©╫О©╫Б╣╫О©╫О©╫О©╫О©╫О©╫м╥О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫щ╣О©╫О©╫ч╦О©╫. ';
+  FreeModifiedDetailMsg = #13#10#13#10'О©╫О©╫О©╫ч╦О©╫О©╫ж╫з╣О©╫ф╚О©╫ф╣О©╫ж╥(О©╫т╪О©╫О©╫О©╫О©╫О©╫): ';
+  DoubleFreeErrorMsg = 'О©╫О©╫м╪О©╫м╥О©╫/О©╫О©╫О©╫б╥О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫н╢О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫.';
   WrongMMFreeErrorMsg = 'An attempt has been made to free/reallocate a block that was allocated through a different FastMM instance. Check your memory manager sharing settings.';
-  PreviousBlockSizeMsg = #13#10#13#10'ио╢нй╧сцй╠╣ддз╢Ф©И╢Сп║йг: ';
-  CurrentBlockSizeMsg = #13#10#13#10'дз╢Ф©И╣д╢Сп║йг: ';
-  PreviousObjectClassMsg = #13#10#13#10'╦цдз╢Ф©Иио╢н╠╩сцсзр╩╦ЖйТсзртобюЮ╣д╤тоС: ';
-  CurrentObjectClassMsg = #13#10#13#10'╦цдз╢Ф©И╣╠г╟╠╩сцсзр╩╦ЖйТсзртобюЮ╣д╤тоС: ';
-  PreviousAllocationGroupMsg = #13#10#13#10'╥жеДвИйг: ';
-  PreviousAllocationNumberMsg = #13#10#13#10'╥жеД╨ебКйг: ';
-  CurrentAllocationGroupMsg = #13#10#13#10'╥жеДвИйг: ';
-  CurrentAllocationNumberMsg = #13#10#13#10'╥жеД╨ебКйг: ';
-  BlockErrorMsgTitle = '╪Л╡Б╣╫дз╢Ф╢МнС';
-  VirtualMethodErrorHeader = 'FastMM ╪Л╡Б╣╫╤тряйм╥е╤тоС╣дпИ╥╫╥╗╣д╣Всц. р╩╦Ж╥цнйЁЕм╩рЛЁёожтз╫╚╠╩рЩ╥╒ртжпж╧╣╠г╟╣д╡ывВ.';
-  InterfaceErrorHeader = 'FastMM ╪Л╡Б╣╫╤тряйм╥е╤тоС╣д╫с©з╣дй╧сц. р╩╦Ж╥цнйЁЕм╩рЛЁёожтз╫╚╠╩рЩ╥╒ртжпж╧╣╠г╟╣д╡ывВ.';
-  BlockHeaderCorruptedNoHistoryMsg = ' ╡╩пр╣ь, сисздз╢Ф©Им╥╡©╣ддзхщря╠╩фф╩╣, нч╥╗╣ц╣╫╦цдз╢Ф©И╣дй╧сцюЗй╥.';
-  FreedObjectClassMsg = #13#10#13#10'╠╩йм╥е╣д╤тоСкЫйТ╣дюЮ: ';
-  VirtualMethodName = #13#10#13#10'пИ╥╫╥╗: ';
-  VirtualMethodOffset = 'ф╚рф╣ьж╥ +';
-  VirtualMethodAddress = #13#10#13#10'пИ╥╫╥╗╣д╣ьж╥: ';
+  PreviousBlockSizeMsg = #13#10#13#10'О©╫о╢О©╫й╧О©╫О©╫й╠О©╫О©╫О©╫з╢О©╫О©╫О©╫п║О©╫О©╫: ';
+  CurrentBlockSizeMsg = #13#10#13#10'О©╫з╢О©╫О©╫д╢О©╫п║О©╫О©╫: ';
+  PreviousObjectClassMsg = #13#10#13#10'О©╫О©╫О©╫з╢О©╫О©╫О©╫о╢н╠О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╤О©╫О©╫О©╫: ';
+  CurrentObjectClassMsg = #13#10#13#10'О©╫О©╫О©╫з╢О©╫И╣╠г╟О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╤О©╫О©╫О©╫: ';
+  PreviousAllocationGroupMsg = #13#10#13#10'О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫: ';
+  PreviousAllocationNumberMsg = #13#10#13#10'О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫: ';
+  CurrentAllocationGroupMsg = #13#10#13#10'О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫: ';
+  CurrentAllocationNumberMsg = #13#10#13#10'О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫: ';
+  BlockErrorMsgTitle = 'О©╫О©╫Б╣╫О©╫з╢О©╫О©╫О©╫О©╫';
+  VirtualMethodErrorHeader = 'FastMM О©╫О©╫Б╣╫О©╫О©╫О©╫О©╫О©╫м╥е╤О©╫О©╫О©╫О©╫О©╫И╥╫О©╫О©╫О©╫д╣О©╫О©╫О©╫. р╩О©╫О©╫О©╫О©╫О©╫йЁО©╫м╩О©╫ЛЁёО©╫О©╫О©╫з╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╧О©╫О©╫г╟О©╫д╡О©╫О©╫О©╫.';
+  InterfaceErrorHeader = 'FastMM О©╫О©╫Б╣╫О©╫О©╫О©╫О©╫О©╫м╥е╤О©╫О©╫О©╫д╫с©з╣О©╫й╧О©╫О©╫. р╩О©╫О©╫О©╫О©╫О©╫йЁО©╫м╩О©╫ЛЁёО©╫О©╫О©╫з╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ж╧О©╫О©╫г╟О©╫д╡О©╫О©╫О©╫.';
+  BlockHeaderCorruptedNoHistoryMsg = ' О©╫О©╫О©╫р╣О©╫, О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫м╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╠О©╫О©╫ф╩О©╫, О©╫ч╥О©╫О©╫ц╣О©╫О©╫О©╫О©╫з╢О©╫О©╫О©╫й╧О©╫О©╫О©╫О©╫й╥.';
+  FreedObjectClassMsg = #13#10#13#10'О©╫О©╫О©╫м╥е╣д╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫: ';
+  VirtualMethodName = #13#10#13#10'О©╫И╥╫О©╫О©╫: ';
+  VirtualMethodOffset = 'ф╚О©╫ф╣О©╫ж╥ +';
+  VirtualMethodAddress = #13#10#13#10'О©╫И╥╫О©╫О©╫О©╫д╣О©╫ж╥: ';
   {Stack trace messages}
-  CurrentThreadIDMsg = #13#10#13#10'╣╠г╟оъЁл╣д ID йг 0x';
-  CurrentStackTraceMsg = ', ╣╪жб╦ц╢МнС╣д╤яу╩╦Звы(╥╣╩ь╣ьж╥): ';
-  ThreadIDPrevAllocMsg = #13#10#13#10'╦цдз╢Ф©Ииор╩╢н╥жеДсзоъЁл 0x';
-  ThreadIDAtAllocMsg = #13#10#13#10'╦цдз╢Ф©И╥жеДсзоъЁл 0x';
-  ThreadIDAtFreeMsg = #13#10#13#10'╦цдз╢Ф©Ииор╩╢нйм╥есзоъЁл 0x';
-  ThreadIDAtObjectAllocMsg = #13#10#13#10'╦ц╤тоС╥жеДсзоъЁл 0x';
-  ThreadIDAtObjectFreeMsg = #13#10#13#10'╦ц╤тоСкФ╨Сйм╥есзоъЁл 0x';
-  StackTraceMsg = ', ╣╠й╠╣д╤яу╩╦Звы(╥╣╩ь╣ьж╥): ';
+  CurrentThreadIDMsg = #13#10#13#10'О©╫О©╫г╟О©╫ъЁл╣О©╫ ID О©╫О©╫ 0x';
+  CurrentStackTraceMsg = ', О©╫О©╫О©╫б╦ц╢О©╫О©╫О©╫д╤О©╫у╩О©╫О©╫О©╫О©╫(О©╫О©╫О©╫ь╣О©╫ж╥): ';
+  ThreadIDPrevAllocMsg = #13#10#13#10'О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫р╩О©╫н╥О©╫О©╫О©╫О©╫О©╫О©╫ъЁО©╫ 0x';
+  ThreadIDAtAllocMsg = #13#10#13#10'О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ъЁО©╫ 0x';
+  ThreadIDAtFreeMsg = #13#10#13#10'О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫м╥О©╫О©╫О©╫О©╫ъЁО©╫ 0x';
+  ThreadIDAtObjectAllocMsg = #13#10#13#10'О©╫ц╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫ъЁО©╫ 0x';
+  ThreadIDAtObjectFreeMsg = #13#10#13#10'О©╫ц╤О©╫О©╫О©╫О©╫О©╫О©╫О©╫м╥О©╫О©╫О©╫О©╫ъЁО©╫ 0x';
+  StackTraceMsg = ', О©╫О©╫й╠О©╫д╤О©╫у╩О©╫О©╫О©╫О©╫(О©╫О©╫О©╫ь╣О©╫ж╥): ';
   {Installation Messages}
-  AlreadyInstalledMsg = 'FastMM4 ря╬╜╠╩╟╡в╟';
-  AlreadyInstalledTitle = 'ря╬╜╪сть';
-  OtherMMInstalledMsg = 'FastMM4 нч╥╗╠╩╟╡в╟, рРн╙фДкШ╣зхЩ╥╫дз╢Ф╧эюМфВряохвтпп╟╡в╟.'
-    + #13#10'хГ╧ШдЦоКй╧сц FastMM4, гКх╥хотздЦоНд©╣д .dpr нд╪Ч╣д "uses" ╡©╥жжп, '
-    + #13#10'FastMM4.pas йг╣зр╩╦Ж╠╩й╧сц╣д╣╔т╙.';
-  OtherMMInstalledTitle = 'нч╥╗╟╡в╟ FastMM4 - фДкШдз╢Ф╧эюМфВряох╠╩╟╡в╟';
-  MemoryAllocatedMsg = 'FastMM4 нч╥╗╟╡в╟, рРн╙╢кг╟рям╗╧Щд╛ходз╢Ф╧эюМфВ╥жеДакдз╢Ф.'
-    + #13#10'FastMM4.pas ╠ьпКйгдЦоНд©╣д .dpr нд╪Чжп╣зр╩╦Ж╠╩й╧сц╣д╣╔т╙, ╥ЯтР©идэтз'
-    + #13#10'FastMM4 ╣ц╣╫©ьжфх╗ж╝г╟, с╕сцЁлпРря╬╜м╗╧Щд╛ходз╢Ф╧эюМфВ╥жеДакдз╢Ф.'
-    + #13#10#13#10'хГ╧ШдЦй╧сцакрЛЁё╡╤в╫╧╓╬ъ, оС MadExcept(╩Рхн╨н╫╚пч╦д╣╔т╙ЁУй╪╩╞кЁпР╣д╧╓╬ъ),'
-    + #13#10'гК╣╫кЭ╣деДжцрЁцФ,х╥╠ё FastMM4.pas ╣╔т╙тзхн╨нфДкШ╣╔т╙ж╝г╟╠╩ЁУй╪╩╞.';
-  MemoryAllocatedTitle = 'нч╥╗╟╡в╟ FastMM4 - ж╝г╟ря╬╜╥жеДакдз╢Ф';
+  AlreadyInstalledMsg = 'FastMM4 О©╫я╬О©╫О©╫О©╫О©╫О©╫в╟';
+  AlreadyInstalledTitle = 'О©╫я╬О©╫О©╫О©╫О©╫О©╫';
+  OtherMMInstalledMsg = 'FastMM4 О©╫ч╥О©╫О©╫О©╫О©╫О©╫в╟, О©╫О©╫н╙О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫п╟О©╫в╟.'
+    + #13#10'О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫ FastMM4, О©╫О©╫х╥О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©О©╫О©╫ .dpr О©╫д╪О©╫О©╫О©╫ "uses" О©╫О©╫О©╫О©╫О©╫О©╫, '
+    + #13#10'FastMM4.pas О©╫г╣О©╫р╩О©╫О©╫О©╫О©╫й╧О©╫ц╣д╣О©╫т╙.';
+  OtherMMInstalledTitle = 'О©╫ч╥О©╫О©╫О©╫в╟ FastMM4 - О©╫О©╫О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫х╠О©╫О©╫О©╫в╟';
+  MemoryAllocatedMsg = 'FastMM4 О©╫ч╥О©╫О©╫О©╫в╟, О©╫О©╫н╙О©╫О©╫г╟О©╫О©╫м╗О©╫О©╫д╛О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫.'
+    + #13#10'FastMM4.pas О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©О©╫О©╫ .dpr О©╫д╪О©╫О©╫п╣О©╫р╩О©╫О©╫О©╫О©╫й╧О©╫ц╣д╣О©╫т╙, О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫'
+    + #13#10'FastMM4 О©╫ц╣О©╫О©╫О©╫О©╫О©╫х╗ж╝г╟, с╕О©╫цЁО©╫О©╫О©╫О©╫я╬О©╫м╗О©╫О©╫д╛О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫.'
+    + #13#10#13#10'О©╫О©╫О©╫О©╫О©╫й╧О©╫О©╫О©╫О©╫О©╫ЛЁёО©╫О©╫в╫О©╫О©╫О©╫О©╫, О©╫О©╫ MadExcept(О©╫О©╫О©╫н╨н╫О©╫О©╫ч╦д╣О©╫т╙О©╫О©╫й╪О©╫О©╫кЁО©╫О©╫д╧О©╫О©╫О©╫),'
+    + #13#10'О©╫К╣╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫рЁО©╫О©╫,х╥О©╫О©╫ FastMM4.pas О©╫О©╫т╙О©╫О©╫О©╫н╨О©╫О©╫О©╫О©╫О©╫О©╫О©╫т╙ж╝г╟О©╫О©╫О©╫О©╫й╪О©╫О©╫.';
+  MemoryAllocatedTitle = 'О©╫ч╥О©╫О©╫О©╫в╟ FastMM4 - ж╝г╟О©╫я╬О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫';
   {Leak checking messages}
-  LeakLogHeader = 'р╩╦Ждз╢Ф©Иряп╧б╤. ╢Сп║йг: ';
-  LeakMessageHeader = 'уБ╦Жс╕сцЁлпР╢Фтздз╢Фп╧б╤. ';
-  SmallLeakDetail = 'п║дз╢Ф©И╣дп╧б╤сп'
+  LeakLogHeader = 'р╩О©╫О©╫О©╫з╢О©╫О©╫О©╫О©╫п╧б╤. О©╫О©╫п║О©╫О©╫: ';
+  LeakMessageHeader = 'О©╫О©╫О©╫с╕О©╫цЁО©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫п╧б╤. ';
+  SmallLeakDetail = 'п║О©╫з╢О©╫О©╫О©╫п╧б╤О©╫О©╫'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (╡╩╟Эю╗ря╟╢ж╦уКв╒╡А╣дт╓ж╙п╧б╤)'
+    + ' (О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╟О©╫ж╦О©╫О©╫в╒О©╫О©╫О©╫т╓ж╙п╧б╤)'
 {$endif}
     + ':'#13#10;
-  LargeLeakDetail = 'ряп╧б╤╣джп╣х╪╟╢Сдз╢Ф©И╣д╢Сп║йг'
+  LargeLeakDetail = 'О©╫О©╫п╧б╤О©╫О©╫О©╫п╣х╪О©╫О©╫О©╫О©╫з╢О©╫О©╫д╢О©╫п║О©╫О©╫'
 {$ifdef HideExpectedLeaksRegisteredByPointer}
-    + ' (╡╩╟Эю╗ря╟╢ж╦уКв╒╡А╣дт╓ж╙п╧б╤)'
+    + ' (О©╫О©╫О©╫О©╫О©╫О©╫О©╫я╟О©╫ж╦О©╫О©╫в╒О©╫О©╫О©╫т╓ж╙п╧б╤)'
 {$endif}
     + ': ';
-  BytesMessage = ' вж╫з: ';
+  BytesMessage = ' О©╫ж╫О©╫: ';
   AnsiStringBlockMessage = 'AnsiString';
   UnicodeStringBlockMessage = 'UnicodeString';
   LeakMessageFooter = #13#10
 {$ifndef HideMemoryLeakHintMessage}
-    + #13#10'в╒рБ: '
+    + #13#10'в╒О©╫О©╫: '
   {$ifdef RequireIDEPresenceForLeakReporting}
-    + 'ж╩сп╣╠ Delphi м╛й╠ткпптзм╛р╩╪фкЦ╩Зиой╠╡е╩А╫Ьппдз╢Фп╧б╤╪Л╡И. '
+    + 'ж╩О©╫п╣О©╫ Delphi м╛й╠О©╫О©╫О©╫О©╫О©╫О©╫м╛р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╠О©╫е╩О©╫О©╫О©╫О©╫О©╫з╢О©╫п╧б╤О©╫О©╫О©╫. '
   {$endif}
   {$ifdef FullDebugMode}
     {$ifdef LogMemoryLeakDetailToFile}
-    + 'дз╢Фп╧б╤╣доЙо╦пео╒ря╬╜╠╩╪гб╪╣╫сК╠╬с╕сцЁлпРм╛р╩д©б╪об╣др╩╦Жнд╠╬нд╪Чжп. '
+    + 'О©╫з╢О©╫п╧б╤О©╫О©╫О©╫О©╫о╦О©╫О©╫о╒О©╫я╬О©╫О©╫О©╫О©╫О©╫б╪О©╫О©╫О©╫К╠╬с╕О©╫цЁО©╫О©╫О©╫м╛р╩д©б╪О©╫б╣О©╫р╩О©╫О©╫О©╫д╠О©╫О©╫д╪О©╫О©╫О©╫. '
     {$else}
-    + 'гКфТсц "LogMemoryLeakDetailToFile" лУ╪Ч╠ЮрК©╙╧ьрт╣ц╣╫р╩╦Ж╟Э╨╛╧ьсздз╢Фп╧б╤╣доЙо╦пео╒╣дхуж╬нд╪Ч. '
+    + 'О©╫О©╫О©╫О©╫О©╫О©╫ "LogMemoryLeakDetailToFile" О©╫О©╫О©╫О©╫О©╫О©╫О©╫К©╙О©╫О©╫О©╫т╣ц╣О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫п╧б╤О©╫О©╫О©╫О©╫о╦О©╫О©╫о╒О©╫О©╫О©╫О©╫ж╬О©╫д╪О©╫. '
     {$endif}
   {$else}
-    + 'р╙╣ц╣╫р╩╦Ж╟Э╨╛╧ьсздз╢Фп╧б╤╣доЙо╦пео╒╣дхуж╬нд╪Ч, гКфТсц "FullDebugMode" ╨м "LogMemoryLeakDetailToFile" лУ╪Ч╠ЮрК©╙╧ь. '
+    + 'р╙О©╫ц╣О©╫р╩О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫з╢О©╫п╧б╤О©╫О©╫О©╫О©╫о╦О©╫О©╫о╒О©╫О©╫О©╫О©╫ж╬О©╫д╪О©╫, О©╫О©╫О©╫О©╫О©╫О©╫ "FullDebugMode" О©╫О©╫ "LogMemoryLeakDetailToFile" О©╫О©╫О©╫О©╫О©╫О©╫О©╫К©╙О©╫О©╫. '
   {$endif}
-    + 'р╙╫Шж╧дз╢Фп╧б╤╪Л╡И, гК╧ь╠у "EnableMemoryLeakReporting" лУ╪Ч╠ЮрК©╙╧ь.'#13#10
+    + 'р╙О©╫О©╫ж╧О©╫з╢О©╫п╧б╤О©╫О©╫О©╫, О©╫О©╫ь╠О©╫ "EnableMemoryLeakReporting" О©╫О©╫О©╫О©╫О©╫О©╫О©╫К©╙О©╫О©╫.'#13#10
 {$endif}
     + #0;
-  LeakMessageTitle = '╪Л╡Б╣╫дз╢Фп╧б╤';
+  LeakMessageTitle = 'О©╫О©╫Б╣╫О©╫з╢О©╫п╧б╤';
 {$ifdef UseOutputDebugString}
-  FastMMInstallMsg = 'FastMM ря╠╩╟╡в╟.';
-  FastMMInstallSharedMsg = 'уЩ╧╡сцр╩╦Жря╢Фтз╣д FastMM й╣юЩ.';
-  FastMMUninstallMsg = 'FastMM ря╠╩п╤ть.';
-  FastMMUninstallSharedMsg = 'рямёж╧╧╡сцр╩╦Жря╢Фтз╣д FastMM й╣юЩ.';
+  FastMMInstallMsg = 'FastMM О©╫я╠О©╫О©╫О©╫в╟.';
+  FastMMInstallSharedMsg = 'О©╫О©╫О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫я╢О©╫О©╫з╣О©╫ FastMM й╣О©╫О©╫.';
+  FastMMUninstallMsg = 'FastMM О©╫я╠О©╫п╤О©╫О©╫.';
+  FastMMUninstallSharedMsg = 'О©╫О©╫мёж╧О©╫О©╫О©╫О©╫р╩О©╫О©╫О©╫я╢О©╫О©╫з╣О©╫ FastMM й╣О©╫О©╫.';
 {$endif}
 {$ifdef DetectMMOperationsAfterUninstall}
-  InvalidOperationTitle = 'п╤тьж╝╨С╥╒иЗак MM ╡ывВ.';
-  InvalidGetMemMsg = 'FastMM ╪Л╡Б╣╫тз FastMM ╠╩п╤тьж╝╨С╣Всцак GetMem.';
-  InvalidFreeMemMsg = 'FastMM ╪Л╡Б╣╫тз FastMM ╠╩п╤тьж╝╨С╣Всцак FreeMem.';
-  InvalidReallocMemMsg = 'FastMM ╪Л╡Б╣╫тз FastMM ╠╩п╤тьж╝╨С╣Всцак ReallocMem.';
-  InvalidAllocMemMsg = 'FastMM ╪Л╡Б╣╫тз FastMM ╠╩п╤тьж╝╨С╣Всцак AllocMem.';
+  InvalidOperationTitle = 'п╤О©╫О©╫ж╝О©╫О©╫О©╫О©╫О©╫О©╫ MM О©╫О©╫О©╫О©╫.';
+  InvalidGetMemMsg = 'FastMM О©╫О©╫Б╣╫О©╫О©╫ FastMM О©╫О©╫п╤О©╫О©╫ж╝О©╫О©╫О©╫О©╫О©╫О©╫О©╫ GetMem.';
+  InvalidFreeMemMsg = 'FastMM О©╫О©╫Б╣╫О©╫О©╫ FastMM О©╫О©╫п╤О©╫О©╫ж╝О©╫О©╫О©╫О©╫О©╫О©╫О©╫ FreeMem.';
+  InvalidReallocMemMsg = 'FastMM О©╫О©╫Б╣╫О©╫О©╫ FastMM О©╫О©╫п╤О©╫О©╫ж╝О©╫О©╫О©╫О©╫О©╫О©╫О©╫ ReallocMem.';
+  InvalidAllocMemMsg = 'FastMM О©╫О©╫Б╣╫О©╫О©╫ FastMM О©╫О©╫п╤О©╫О©╫ж╝О©╫О©╫О©╫О©╫О©╫О©╫О©╫ AllocMem.';
+{$endif}
+
+{$ifdef LogLockContention}
+  LockingReportTitle = 'Locking Report';
+{$endif}
+{$ifdef LogLockContention}
+  LockingReportHeader = 'Top locking contention sites';
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageHeader = 'Release stack usage statistics';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg1 = 'Small blocks [';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageSmallBlocksMsg2 = ']: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalSmallBlocksMsg = 'Total small blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageMediumBlocksMsg = 'Medium blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageLargeBlocksMsg = 'Large blocks: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageTotalMemoryMsg = 'Total memory: ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers1Msg = ' in ';
+{$endif}
+{$endif}
+{$ifdef UseReleaseStack}
+{$ifdef DebugReleaseStack}
+  ReleaseStackUsageBuffers2Msg = ' buffers [';
+{$endif}
 {$endif}
 
 implementation
