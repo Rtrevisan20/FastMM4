@@ -1,0 +1,27 @@
+FastMM4 - Fast Memory Manager
+================================
+
+Copyright (c) Professional Software Development / Pierre le Riche
+
+This work is released under a dual license, and you may choose to use it under
+either of the following licenses:
+
+  1. Mozilla Public License 1.1 (MPL 1.1)
+     http://www.mozilla.org/MPL/MPL-1.1.html
+
+  2. GNU Lesser General Public License 2.1 (LGPL 2.1)
+     http://www.opensource.org/licenses/lgpl-license.php
+
+You may use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of this software under the terms of either license, at your option.
+
+If you find FastMM useful or you would like to support further development,
+a donation would be much appreciated.
+
+Contact: fastmm@leriche.org
+Homepage: https://github.com/Rtrevisan20/FastMM4
+
+---------------------------------------------------------------
+This file (LICENSE) summarizes the dual licensing terms for the FastMM4
+source code. The full license texts are available at the URLs above.
+The images in the images/ directory are covered by separate terms (see NOTICE).

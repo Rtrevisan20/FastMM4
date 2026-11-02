@@ -1,0 +1,137 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  fpc-build:
+    name: FPC build and smoke test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fpc: [ "3.2.2", "3.3.1" ]
+        target: [ i386-linux, x86_64-linux ]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install FPC
+        uses: graemeg/setup-fpc@v1
+        with:
+          fpc-version: ${{ matrix.fpc }}
+          fpc-target: ${{ matrix.target }}
+
+      - name: Show FPC version
+        run: fpc -iV && fpc -iT
+
+      - name: Compile FastMM4 (smoke test)
+        run: |
+          fpc -Mobjfpc -Sh -Sg -Fi. FastMM4.pas
+
+      - name: Compile smoke test program
+        run: |
+          cat > /tmp/smoke_test.pp <<'EOF'
+          program SmokeTest;
+          uses FastMM4, SysUtils;
+          var P: Pointer; S: string; A: array of Integer; I: Integer;
+          begin
+            try
+              WriteLn('FastMMVersion=', FastMMVersion);
+              GetMem(P, 1024);
+              ReallocMem(P, 4096);
+              FreeMem(P);
+              S := StringOfChar('x', 10000);
+              SetLength(A, 1000);
+              for I := 0 to High(A) do A[I] := I;
+              SetLength(A, 0);
+              WriteLn('OK len=', Length(S));
+            except
+              on E: Exception do
+              begin
+                WriteLn('FAIL ', E.ClassName, ': ', E.Message);
+                Halt(1);
+              end;
+            end;
+          end.
+          EOF
+          fpc -Mobjfpc -Sh -Sg -Fi. -o/tmp/smoke_test /tmp/smoke_test.pp
+          /tmp/smoke_test
+
+      - name: Validate FastMMVersion against boss.json
+        run: |
+          CODE_VERSION=$(grep "FastMMVersion = '" FastMM4.pas | sed "s/.*'\(.*\)'.*/\1/")
+          BOSS_VERSION=$(grep '"version"' boss.json | sed "s/.*\"version\": \"\(.*\)\".*/\1/")
+          echo "Code version: $CODE_VERSION"
+          echo "Boss version: $BOSS_VERSION"
+          if [ "$CODE_VERSION" != "$BOSS_VERSION" ]; then
+            echo "::error::FastMMVersion ($CODE_VERSION) does not match boss.json version ($BOSS_VERSION)"
+            exit 1
+          fi
+
+      - name: Validate translation constants against root FastMM4Messages.pas
+        run: |
+          python3 - <<'PYEOF'
+          import re, sys, glob
+
+          # Extract constants from root English messages
+          root_constants = {}
+          with open('FastMM4Messages.pas', 'r', encoding='utf-8', errors='ignore') as f:
+              content = f.read()
+          for m in re.finditer(r'(\w+)\s*=\s*''(.*?)'';', content):
+              root_constants[m.group(1)] = m.group(2)
+
+          print(f"Root FastMM4Messages.pas: {len(root_constants)} constants")
+
+          # Check each translation
+          failed = False
+          for path in sorted(glob.glob('Translations/*/FastMM4Messages.pas')):
+              trans_constants = {}
+              with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                  content = f.read()
+              for m in re.finditer(r'(\w+)\s*=\s*''(.*?)'';', content):
+                  trans_constants[m.group(1)] = m.group(2)
+
+              missing = set(root_constants.keys()) - set(trans_constants.keys())
+              if missing:
+                  failed = True
+                  print(f"FAIL {path}: missing {len(missing)} constants: {sorted(missing)[:10]}")
+              else:
+                  print(f"OK   {path}: {len(trans_constants)} constants")
+
+          if failed:
+              sys.exit(1)
+          PYEOF
+
+  static-checks:
+    name: Static checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for prohibited tracked binaries
+        run: |
+          # DLLs and libs should not be tracked in git
+          TRACKED_DLLS=$(git ls-files '*.dll' '*.lib' 2>/dev/null || true)
+          if [ -n "$TRACKED_DLLS" ]; then
+            echo "::warning::Tracked binary files found:"
+            echo "$TRACKED_DLLS"
+            echo "Consider moving binaries to GitHub Releases."
+          fi
+
+      - name: Check line endings consistency
+        run: |
+          # Warn about CRLF/LF mix in Pascal sources
+          MIXED=$(git ls-files '*.pas' '*.inc' | xargs file 2>/dev/null | grep -i 'crlf' || true)
+          if [ -n "$MIXED" ]; then
+            echo "::notice::Some Pascal sources use CRLF line endings."
+          fi
+
+      - name: Verify AGENTS.md is ignored
+        run: |
+          if git check-ignore AGENTS.md >/dev/null 2>&1; then
+            echo "::notice::AGENTS.md is gitignored (not versioned)."
+          fi

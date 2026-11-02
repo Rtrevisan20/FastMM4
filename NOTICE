@@ -1,0 +1,31 @@
+NOTICE
+======
+
+FastMM4 - Fast Memory Manager
+-----------------------------
+
+Source code:
+  The FastMM4 source code (.pas, .inc, .dpr, .dpk files) is released under a
+  dual license: you may choose to use it under either the Mozilla Public
+  License 1.1 (MPL 1.1) or the GNU Lesser General Public License 2.1 (LGPL
+  2.1). See LICENSE and the header of FastMM4.pas for details.
+
+Images (images/ directory):
+  The images in the images/ directory (including FastMM-Title.jpg and other
+  artwork) are NOT covered by the dual MPL/LGPL license of the source code.
+  They are licensed under separate terms:
+
+    "unlimited use by Pierre le Riche and the FastMM4 project"
+
+  If you wish to use these images outside the context of the FastMM4 project,
+  please contact the copyright holder for permission.
+
+Binaries (FullDebugMode DLL, Replacement BorlndMM DLL, demos):
+  Precompiled binaries may have been built from the FastMM4 source and inherit
+  the dual MPL/LGPL license of the source. Binaries that are no longer built
+  from source or whose provenance is unknown are provided as-is, without
+  warranty. See the GitHub Release notes for checksums and build provenance
+  where available.
+
+Contact: fastmm@leriche.org
+Homepage: https://github.com/Rtrevisan20/FastMM4
