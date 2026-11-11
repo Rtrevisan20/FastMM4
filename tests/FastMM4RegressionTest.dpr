@@ -9,8 +9,7 @@ program FastMM4RegressionTest;
 uses
   FastMM4,
   System.SysUtils,
-  System.Classes,
-  System.SyncObjs;
+  System.Classes;
 
 var
   FailCount: Integer = 0;
@@ -114,25 +113,25 @@ begin
 end;
 
 procedure TestMultiThread;
+const
+  CThreadCount = 4;
+  CAllocationsPerThread = 1000;
 var
   Threads: TArray<TThread>;
-  Errors: TArray<string>;
   I: Integer;
-  CS: TCriticalSection;
 begin
-  WriteLn('-- Teste 7: Multi-threading (4 threads, 1000 alocacoes cada)');
-  CS := TCriticalSection.Create;
-  Errors := nil;
-  SetLength(Threads, 4);
-  for I := 0 to 3 do
+  WriteLn('-- Teste 7: Multi-threading (', CThreadCount, ' threads, ',
+    CAllocationsPerThread, ' alocacoes cada)');
+  SetLength(Threads, CThreadCount);
+  for I := 0 to CThreadCount - 1 do
   begin
     Threads[I] := TThread.CreateAnonymousThread(procedure
     var
       J: Integer;
       Arr: TArray<Pointer>;
     begin
-      SetLength(Arr, 100);
-      for J := 0 to 99 do
+      SetLength(Arr, CAllocationsPerThread);
+      for J := 0 to CAllocationsPerThread - 1 do
       begin
         Arr[J] := nil;
         GetMem(Arr[J], 256);
@@ -142,18 +141,51 @@ begin
       end;
       SetLength(Arr, 0);
     end);
+    {CreateAnonymousThread sets FreeOnTerminate, so a finished thread frees
+     itself and the reference below becomes dangling. Own the lifetime here
+     instead: that keeps every WaitFor valid and makes the leak checker see
+     a clean shutdown.}
+    Threads[I].FreeOnTerminate := False;
     Threads[I].Start;
   end;
-  for I := 0 to 3 do
+  for I := 0 to CThreadCount - 1 do
+  begin
     Threads[I].WaitFor;
-  CS.Free;
-  Check(True, '4 threads completaram 1000 alocacoes cada sem excecao');
+    Threads[I].Free;
+  end;
+  Check(True, IntToStr(CThreadCount) + ' threads completaram ' +
+    IntToStr(CAllocationsPerThread) + ' alocacoes cada sem excecao');
 end;
 
 procedure TestVersion;
 begin
   WriteLn('-- Teste 8: Validacao de versao');
   Check(FastMMVersion = '4.994', 'FastMMVersion = 4.994 (atual: ' + FastMMVersion + ')');
+end;
+
+{Confirms that FastMM is the memory manager actually in use, not merely
+ compiled in. A build that enables InstallOnlyIfRunningInIDE or UseRTLMM, or
+ that lists FastMM4 after another unit in the project uses clause, runs on the
+ default memory manager and silently provides no debugging features.}
+procedure TestInstallationState;
+var
+  LState: TFastMM_MemoryManagerInstallationState;
+begin
+  WriteLn('-- Teste 9: Estado de instalacao do memory manager');
+  LState := FastMM_GetInstallationState;
+  case LState of
+    mmisInstalled:
+      Check(True, 'FastMM4 esta instalado como memory manager');
+    mmisUsingSharedMemoryManager:
+      Check(True, 'FastMM4 partilhado em uso (EXE/DLL)');
+    mmisDefaultMemoryManagerInUse:
+      Check(False, 'FastMM4 NAO esta instalado: o RTL usa o memory manager padrao ' +
+        '(verifique InstallOnlyIfRunningInIDE, UseRTLMM e se FastMM4 e a primeira unit)');
+    mmisOtherThirdPartyMemoryManagerInstalled:
+      Check(False, 'FastMM4 NAO esta instalado: outro memory manager de terceiros esta ativo');
+  else
+    Check(False, 'Estado de instalacao desconhecido');
+  end;
 end;
 
 var
@@ -166,6 +198,7 @@ begin
   WriteLn('');
 
   TestVersion;
+  TestInstallationState;
   TestBasicAlloc;
   TestStringsAndArrays;
   TestNegativeSizes;

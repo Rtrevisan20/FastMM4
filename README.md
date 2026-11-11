@@ -132,8 +132,6 @@ The manifest declares `mainsrc: "src"`, so Boss adds only the `src/`
 directory (containing the 6 runtime units) to the consumer's unit search
 path, without exposing `Demos/`, `Translations/` or the legacy replacement
 DLL projects.
-A future major release will move the runtime units to `src/`, which is the
-documented layout for Boss packages.
 
 Boss creates a `modules/` directory in the consuming project; it is already
 ignored by this repository's `.gitignore`.
@@ -152,6 +150,33 @@ To use `FullDebugMode`:
 See `FastMM4_Readme.txt` and `FastMM4_FAQ.txt` for the legacy documentation
 and advanced scenarios. Note that the issue tracker and the source header are
 the authoritative places for recent changes.
+
+## Troubleshooting
+
+### FastMM4 compiles but appears to do nothing
+
+The usual cause is that FastMM4 is not installed, not that it is broken. Check,
+in this order:
+
+1. `FastMM4` is the **first** unit in the project file's `uses` clause, before
+   `System`, `Vcl`, `Forms` or any other unit.
+2. `InstallOnlyIfRunningInIDE` is **not** enabled in `FastMM4Options.inc`. When
+   it is, FastMM4 installs only under the IDE debugger and the application uses
+   the default memory manager everywhere else.
+3. `UseRTLMM` is not enabled.
+4. If you expect leak reports outside the debugger, `RequireDebuggerPresenceForLeakReporting`
+   and `RequireIDEPresenceForLeakReporting` are disabled.
+
+To confirm the runtime state, call `FastMM_GetInstallationState` and compare the
+result with `mmisInstalled` (or `mmisUsingSharedMemoryManager` for an EXE/DLL
+pair). `tests/FastMM4RegressionTest.dpr` does exactly that in "Teste 9" and
+fails when the default memory manager is active.
+
+### "Unit 'FastMM4Messages' is compiled twice" or wrong leak message language
+
+Another `FastMM4Messages.pas` is visible on the search path, typically from a
+`Translations/` directory. Keep only one copy reachable by the compiler. With
+Boss, `mainsrc: "src"` avoids this by adding only `src/` to the search path.
 
 ## C++ Builder
 
